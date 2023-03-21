@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zbEEDGGsywDRrEMjwouAQEmc9AGsrw6vH66ero759ic=",
+  "Source": "lms",
+  "BasePath": "_content/lms",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
