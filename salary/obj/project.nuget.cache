@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "prcxkAFJNC0TDyavS0u16xGmvRKzLZXeduCpp67b+rVmaQsnoBXvhs5yPFWYXagvHucgAAM5is3hf1kYsudSsA==",
+  "dgSpecHash": "nD5sX6RABxBNDEZsEsQqZZH4rUh8iAzDIDJ2cKBjLeR6P0Wzr/nNH3pYgoPHTxdcL8zc1At95ctwqh8QxsIjSQ==",
   "success": true,
-  "projectFilePath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/salary/salary.csproj",
+  "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/salary/salary.csproj",
   "expectedPackageFiles": [
     "/Users/german/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

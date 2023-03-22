@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/german/Projects/otus.microservices/hw9/hrsystem/lms/lms.csproj",
+      "projectUniqueName": "/Users/german/Projects/gitrepos/hrsystem/lms/lms.csproj",
       "projectName": "lms",
-      "projectPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/lms/lms.csproj",
+      "projectPath": "/Users/german/Projects/gitrepos/hrsystem/lms/lms.csproj",
       "packagesPath": "/Users/german/.nuget/packages/",
-      "outputPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/lms/obj/",
+      "outputPath": "/Users/german/Projects/gitrepos/hrsystem/lms/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/german/.nuget/NuGet/NuGet.Config"

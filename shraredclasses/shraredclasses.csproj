@@ -7,13 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DTO\" />
     <None Remove="Newtonsoft.Json" />
-    <None Remove="Messages\" />
+    <None Remove="Commands\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
-    <Folder Include="Messages\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

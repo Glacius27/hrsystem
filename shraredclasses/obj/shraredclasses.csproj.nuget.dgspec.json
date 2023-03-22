@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/shraredclasses.csproj": {}
+    "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj": {}
   },
   "projects": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/shraredclasses.csproj": {
+    "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/shraredclasses.csproj",
+        "projectUniqueName": "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj",
         "projectName": "shraredclasses",
-        "projectPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/shraredclasses.csproj",
+        "projectPath": "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj",
         "packagesPath": "/Users/german/.nuget/packages/",
-        "outputPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/obj/",
+        "outputPath": "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/german/.nuget/NuGet/NuGet.Config"

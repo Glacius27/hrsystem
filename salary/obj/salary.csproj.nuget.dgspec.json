@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/salary/salary.csproj": {}
+    "/Users/german/Projects/gitrepos/hrsystem/salary/salary.csproj": {}
   },
   "projects": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/salary/salary.csproj": {
+    "/Users/german/Projects/gitrepos/hrsystem/salary/salary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/german/Projects/otus.microservices/hw9/hrsystem/salary/salary.csproj",
+        "projectUniqueName": "/Users/german/Projects/gitrepos/hrsystem/salary/salary.csproj",
         "projectName": "salary",
-        "projectPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/salary/salary.csproj",
+        "projectPath": "/Users/german/Projects/gitrepos/hrsystem/salary/salary.csproj",
         "packagesPath": "/Users/german/.nuget/packages/",
-        "outputPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/salary/obj/",
+        "outputPath": "/Users/german/Projects/gitrepos/hrsystem/salary/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/german/.nuget/NuGet/NuGet.Config"

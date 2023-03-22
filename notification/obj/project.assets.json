@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/german/Projects/otus.microservices/hw9/hrsystem/notification/notification.csproj",
+      "projectUniqueName": "/Users/german/Projects/gitrepos/hrsystem/notification/notification.csproj",
       "projectName": "notification",
-      "projectPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/notification/notification.csproj",
+      "projectPath": "/Users/german/Projects/gitrepos/hrsystem/notification/notification.csproj",
       "packagesPath": "/Users/german/.nuget/packages/",
-      "outputPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/notification/obj/",
+      "outputPath": "/Users/german/Projects/gitrepos/hrsystem/notification/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/german/.nuget/NuGet/NuGet.Config"

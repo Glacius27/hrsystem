@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/ats/ats.csproj": {}
+    "/Users/german/Projects/gitrepos/hrsystem/ats/ats.csproj": {}
   },
   "projects": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/ats/ats.csproj": {
+    "/Users/german/Projects/gitrepos/hrsystem/ats/ats.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/german/Projects/otus.microservices/hw9/hrsystem/ats/ats.csproj",
+        "projectUniqueName": "/Users/german/Projects/gitrepos/hrsystem/ats/ats.csproj",
         "projectName": "ats",
-        "projectPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/ats/ats.csproj",
+        "projectPath": "/Users/german/Projects/gitrepos/hrsystem/ats/ats.csproj",
         "packagesPath": "/Users/german/.nuget/packages/",
-        "outputPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/ats/obj/",
+        "outputPath": "/Users/german/Projects/gitrepos/hrsystem/ats/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/german/.nuget/NuGet/NuGet.Config"

@@ -8,8 +8,36 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="prometheus-net" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="auth\" />
+    <None Remove="prometheus-net" />
+    <None Remove="prometheus-net.AspNetCore" />
+    <None Remove="prometheus-net.AspNetCore.HealthChecks" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="database\" />
+    <None Remove="Logic\" />
+    <None Remove="MongoDB.Driver" />
+    <None Remove="Models\" />
+    <None Remove="Env\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="auth\" />
+    <Folder Include="database\" />
+    <Folder Include="Logic\" />
+    <Folder Include="Models\" />
+    <Folder Include="Env\" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{341A9F84-E6D2-4126-B698-E1AD70DF80CA}|http">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.salary PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="auth/Models/WeatherForecast.cs">
+    <Files>
+      <File FileName="auth/auth/AuthOptions.cs" Line="3" Column="32" />
+      <File FileName="auth/Controllers/AuthController.cs" Line="9" Column="38" />
+      <File FileName="auth/Controllers/UserController.cs" Line="59" Column="25" />
+      <File FileName="auth/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="auth/database/DataBaseService.cs" Line="5" Column="22" />
+      <File FileName="auth/database/DataBaseSettings.cs" Line="15" Column="2" />
+      <File FileName="auth/Models/User.cs" Line="19" Column="42" />
+      <File FileName="auth/Env/Program.cs" Line="1" Column="1" />
+      <File FileName="auth/WeatherForecast.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="hrsystem" expanded="True">
+            <Node name="shraredclasses" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

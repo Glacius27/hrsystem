@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6r1GOmCO2aCSIwxfZWs8hT6hPe3h48dYIsNMUNBiPd2dVJkbzpVAXNJKpoOdM1fmuazzGNSx7s1aBAno6cf5Hg==",
+  "dgSpecHash": "VxtMXdWwMENLYCLVIUaPeDNyCEk9cYejf32JjTPz/EKeKoLn6hx7uoH8uUshtp4u86tVhPLgw9ni5M9SrxHloA==",
   "success": true,
-  "projectFilePath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/lms/lms.csproj",
+  "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/lms/lms.csproj",
   "expectedPackageFiles": [
     "/Users/german/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

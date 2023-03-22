@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/auth/auth.csproj": {}
+    "/Users/german/Projects/gitrepos/hrsystem/auth/auth.csproj": {}
   },
   "projects": {
-    "/Users/german/Projects/otus.microservices/hw9/hrsystem/auth/auth.csproj": {
+    "/Users/german/Projects/gitrepos/hrsystem/auth/auth.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/german/Projects/otus.microservices/hw9/hrsystem/auth/auth.csproj",
+        "projectUniqueName": "/Users/german/Projects/gitrepos/hrsystem/auth/auth.csproj",
         "projectName": "auth",
-        "projectPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/auth/auth.csproj",
+        "projectPath": "/Users/german/Projects/gitrepos/hrsystem/auth/auth.csproj",
         "packagesPath": "/Users/german/.nuget/packages/",
-        "outputPath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/auth/obj/",
+        "outputPath": "/Users/german/Projects/gitrepos/hrsystem/auth/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/german/.nuget/NuGet/NuGet.Config"
@@ -38,13 +38,41 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
+            "prometheus-net": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "prometheus-net.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "prometheus-net.AspNetCore.HealthChecks": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VebtqyuhvTxXVvDd26m6hjK2X/BkAeRI2fq6wcvh/p0pQXiuNlGy+cg6dYYFdUTL2oBcNVbM0liwsOGWsFjNpw==",
+  "dgSpecHash": "JvQrDwOUYBmOgyA9f3gdBMYpqLg4StiryRM0pKOsN153cmw03p54EQ5oLzf5z158Q7VJIilzHbjdm2sMCiN2LQ==",
   "success": true,
-  "projectFilePath": "/Users/german/Projects/otus.microservices/hw9/hrsystem/hris/hris.csproj",
+  "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/hris/hris.csproj",
   "expectedPackageFiles": [
     "/Users/german/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
