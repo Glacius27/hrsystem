@@ -917,6 +917,19 @@
         "runtime": {
           "lib/net6.0/ZstdSharp.dll": {}
         }
+      },
+      "shraredclasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/shraredclasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shraredclasses.dll": {}
+        }
       }
     }
   },
@@ -2626,6 +2639,11 @@
         "zstdsharp.port.0.6.2.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "shraredclasses/1.0.0": {
+      "type": "project",
+      "path": "../shraredclasses/shraredclasses.csproj",
+      "msbuildProject": "../shraredclasses/shraredclasses.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2638,7 +2656,8 @@
       "System.IdentityModel.Tokens.Jwt >= 6.27.0",
       "prometheus-net >= 8.0.0",
       "prometheus-net.AspNetCore >= 8.0.0",
-      "prometheus-net.AspNetCore.HealthChecks >= 8.0.0"
+      "prometheus-net.AspNetCore.HealthChecks >= 8.0.0",
+      "shraredclasses >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2665,7 +2684,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj": {
+              "projectPath": "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

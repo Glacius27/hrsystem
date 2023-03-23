@@ -22,3 +22,15 @@
 /Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/obj/Debug/net7.0/refint/shraredclasses.dll
 /Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.pdb
 /Users/german/Projects/otus.microservices/hw9/hrsystem/shraredclasses/obj/Debug/net7.0/ref/shraredclasses.dll
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/bin/Debug/net7.0/shraredclasses.deps.json
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/bin/Debug/net7.0/shraredclasses.dll
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/bin/Debug/net7.0/shraredclasses.pdb
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.csproj.AssemblyReference.cache
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.GeneratedMSBuildEditorConfig.editorconfig
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.AssemblyInfoInputs.cache
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.AssemblyInfo.cs
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.csproj.CoreCompileInputs.cache
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.dll
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/refint/shraredclasses.dll
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/shraredclasses.pdb
+/Users/german/Projects/gitrepos/hrsystem/shraredclasses/obj/Debug/net7.0/ref/shraredclasses.dll

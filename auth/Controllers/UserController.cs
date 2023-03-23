@@ -1,81 +1,93 @@
 ﻿using System;
+using auth.database;
+using auth.Logic;
+using auth.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using shraredclasses.DTO;
+using shraredclasses.Models;
 
 namespace auth.Controllers
 {
-	public class UserController
-	{
+
         [ApiController]
         [Route("[controller]")]
         public class UserController : ControllerBase
         {
             private readonly ILogger<UserController> _logger;
             private DataBaseService _dbService;
+            private UserService _userService;
+        
 
-            public UserController(ILogger<UserController> logger, DataBaseService service)
+            public UserController(ILogger<UserController> logger, DataBaseService service, UserService userService)
             {
                 _logger = logger;
                 _dbService = service;
+                _userService = userService;
+
             }
 
-
-            [HttpPost]
-            [Route("/User")]
-            public ActionResult<Response> CreateUser(CreateUserRequest createUserRequest)
-            {
-                var _user = _dbService.Create(new User(createUserRequest));
-                return new Response()
-                {
-                    Data = _user.UserID
-                };
-            }
-
-            [HttpPut]
+        #region
+        //[HttpPost]
+        //[Route("/User")]
+        //public async Task <WsResponse> CreateUser(CreateUserRequestDTO createUserRequest)
+        //{
+        ////var _user = await _dbService.Create(new User(createUserRequest));
+        //    var _user = await _userService.CreateUser(new User(createUserRequest));
+        //    return new WsResponse()
+        //    {
+        //        Data = _user.UserID
+        //    };
+        //}
+        #endregion
+        [HttpPut]
             [Route("/User/Register/{userId}")]
-            public ActionResult<Response> SetUserPassword(string userId, string password)
+            public ActionResult<WsResponse> SetUserPassword(string userId, string password)
             {
-                _dbService.SetPassword(userId, password);
+                _userService.SetUserPassword(userId, password);
+                //_dbService.SetPassword(userId, password);
                 return Ok();
             }
+        #region
+        //[Authorize]
+        //[HttpGet]
+        //[Route("{userId}")]
+        //public IActionResult GetUserByID(string userId)
+        //{
+        //    var checkresult = CheckIdentity(userId);
+        //    if (!checkresult)
+        //        return Forbid();
+        //    else
+        //    {
+        //        var user = _dbService.Find(userId);
+        //        return Ok(new WsResponse() { Data = user });
+        //    }
+        //}
 
-            [Authorize]
-            [HttpGet]
-            [Route("{userId}")]
-            public IActionResult GetUserByID(string userId)
-            {
-                var checkresult = CheckIdentity(userId);
-                if (!checkresult)
-                    return Forbid();
-                else
-                {
-                    var user = _dbService.Find(userId);
-                    return Ok(new Response() { Data = user });
-                }
-            }
+
+        //[Authorize]
+        //[HttpDelete]
+        //[Route("{userId}")]
+        //public IActionResult DeleteUser(string userId)
+        //{
+        //    var checkresult = CheckIdentity(userId);
+        //    if (!checkresult)
+        //        return Forbid();
+
+        //    var result = _dbService.Delete(userId);
+        //    if (result.DeletedCount > 0)
+        //    {
+        //        return Ok(new WsResponse() { Message = "user deleted" });
+        //    }
+        //    else
+        //    {
+        //        return NotFound(new WsResponse() { Message = "can`t find user" });
+        //    }
+        //}
+        #endregion
 
 
-            [Authorize]
-            [HttpDelete]
-            [Route("{userId}")]
-            public IActionResult DeleteUser(string userId)
-            {
-                var checkresult = CheckIdentity(userId);
-                if (!checkresult)
-                    return Forbid();
-
-                var result = _dbService.Delete(userId);
-                if (result.DeletedCount > 0)
-                {
-                    return Ok(new Response() { Code = 200, Message = "user deleted" });
-                }
-                else
-                {
-                    return NotFound(new Response() { Code = 404, Message = "can`t find user" });
-                }
-            }
-
-            [Authorize]
+        [Authorize]
             [HttpPut]
             [Route("{userId}")]
             public IActionResult UpdateUser(string userId, User user)
@@ -84,7 +96,7 @@ namespace auth.Controllers
                 if (!checkresult)
                     return Forbid();
                 _dbService.Update(userId, user);
-                return Ok(new Response { Code = (int)ErrorCode.Success, Message = "User updated" });
+                return Ok(new WsResponse { Message = "User updated" });
             }
 
             private bool CheckIdentity(string userID)
@@ -101,7 +113,7 @@ namespace auth.Controllers
                 else
                     return true;
             }
-        }
+        
     }
 }
 

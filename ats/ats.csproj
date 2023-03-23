@@ -10,6 +10,22 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Logic\" />
+    <None Remove="Env\" />
+    <None Remove="Models\" />
+    <None Remove="DB\" />
+    <None Remove="MongoDB.Driver" />
+    <None Remove="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logic\" />
+    <Folder Include="Env\" />
+    <Folder Include="Models\" />
+    <Folder Include="DB\" />
+  </ItemGroup>
 </Project>
