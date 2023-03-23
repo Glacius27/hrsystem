@@ -1,16 +1,35 @@
 {
   "version": 2,
-  "dgSpecHash": "JvQrDwOUYBmOgyA9f3gdBMYpqLg4StiryRM0pKOsN153cmw03p54EQ5oLzf5z158Q7VJIilzHbjdm2sMCiN2LQ==",
+  "dgSpecHash": "Voh9UvHGxZ1mfbWzoD5wiXULGrhNE30n+zA1enPI4FQlG3ai0HvFyeA4ne0OUQuDnb7rvvZRiRMW9GMg6ng3qw==",
   "success": true,
   "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/hris/hris.csproj",
   "expectedPackageFiles": [
     "/Users/german/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.configuration/3.1.0/microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.configuration.binder/3.1.0/microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.0/microsoft.extensions.dependencyinjection.3.1.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.diagnostics.healthchecks/6.0.9/microsoft.extensions.diagnostics.healthchecks.6.0.9.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.diagnostics.healthchecks.abstractions/6.0.9/microsoft.extensions.diagnostics.healthchecks.abstractions.6.0.9.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.fileproviders.abstractions/6.0.0/microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.hosting.abstractions/6.0.0/microsoft.extensions.hosting.abstractions.6.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.http/3.1.0/microsoft.extensions.http.3.1.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.logging/3.1.0/microsoft.extensions.logging.3.1.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.2/microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.objectpool/7.0.0/microsoft.extensions.objectpool.7.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/german/.nuget/packages/prometheus-net/8.0.0/prometheus-net.8.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/prometheus-net.aspnetcore/8.0.0/prometheus-net.aspnetcore.8.0.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/prometheus-net.aspnetcore.healthchecks/8.0.0/prometheus-net.aspnetcore.healthchecks.8.0.0.nupkg.sha512",
     "/Users/german/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/german/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/german/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "/Users/german/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    "/Users/german/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

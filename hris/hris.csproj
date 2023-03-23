@@ -10,11 +10,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="prometheus-net" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="DB\" />
     <None Remove="Logic\" />
+    <None Remove="prometheus-net" />
+    <None Remove="prometheus-net.AspNetCore" />
+    <None Remove="prometheus-net.AspNetCore.HealthChecks" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\" />

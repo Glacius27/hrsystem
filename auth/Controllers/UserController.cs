@@ -41,7 +41,7 @@ namespace auth.Controllers
         //}
         #endregion
         [HttpPut]
-            [Route("/User/Register/{userId}")]
+            [Route("/User/password/{userId}")]
             public ActionResult<WsResponse> SetUserPassword(string userId, string password)
             {
                 _userService.SetUserPassword(userId, password);

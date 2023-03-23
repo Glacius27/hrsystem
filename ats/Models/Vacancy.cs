@@ -9,11 +9,14 @@ namespace ats.Models
 	{
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        [JsonProperty("UserID")]
+        [JsonProperty("VacancyID")]
         public string VacancyID { get; set; }
+        [JsonProperty("VacancyName")]
         public string VacancyName { get; set; }
+        [JsonProperty("City")]
         public string City { get; set; }
-        public Applicant[] Applicants { get; set; } 
+        [JsonProperty("VacancyResponses")]
+        public VacancyResponse[] VacancyResponses { get; set; } 
     }
 }
 

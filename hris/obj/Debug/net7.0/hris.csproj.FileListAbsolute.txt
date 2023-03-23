@@ -31,3 +31,6 @@
 /Users/german/Projects/gitrepos/hrsystem/hris/obj/Debug/net7.0/hris.pdb
 /Users/german/Projects/gitrepos/hrsystem/hris/obj/Debug/net7.0/hris.genruntimeconfig.cache
 /Users/german/Projects/gitrepos/hrsystem/hris/obj/Debug/net7.0/ref/hris.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Prometheus.NetStandard.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Prometheus.AspNetCore.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Prometheus.AspNetCore.HealthChecks.dll

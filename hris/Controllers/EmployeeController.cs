@@ -23,7 +23,7 @@ public class EmployeeController : ControllerBase
 
 
     [HttpPost(Name = "GetWeatherForecast")]
-    public async IActionResult Create()
+    public async Task<IActionResult> Create()
     {
         //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         //{

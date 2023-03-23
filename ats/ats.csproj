@@ -12,6 +12,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="prometheus-net" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +24,19 @@
     <None Remove="DB\" />
     <None Remove="MongoDB.Driver" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="prometheus-net" />
+    <None Remove="prometheus-net.AspNetCore" />
+    <None Remove="prometheus-net.AspNetCore.HealthChecks" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logic\" />
     <Folder Include="Env\" />
     <Folder Include="Models\" />
     <Folder Include="DB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\shraredclasses\shraredclasses.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,10 +1,14 @@
 ﻿using System;
+using ats.Models;
+
+
 namespace ats.Logic
 {
 	public class AtsService
 	{
-		public AtsService()
+		public bool RegisterVacancyResponse(string vacancyId, VacancyResponse vacancyResponce)
 		{
+			return true;
 		}
 	}
 }
