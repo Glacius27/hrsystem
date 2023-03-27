@@ -15,6 +15,8 @@
     <PackageReference Include="prometheus-net" Version="8.0.0" />
     <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
     <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
+    <PackageReference Include="MassTransit" Version="8.0.14" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.14" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,12 +29,16 @@
     <None Remove="prometheus-net" />
     <None Remove="prometheus-net.AspNetCore" />
     <None Remove="prometheus-net.AspNetCore.HealthChecks" />
+    <None Remove="MassTransit\" />
+    <None Remove="MassTransit" />
+    <None Remove="MassTransit.RabbitMQ" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logic\" />
     <Folder Include="Env\" />
     <Folder Include="Models\" />
     <Folder Include="DB\" />
+    <Folder Include="MassTransit\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\shraredclasses\shraredclasses.csproj">

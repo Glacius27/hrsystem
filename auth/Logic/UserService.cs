@@ -16,9 +16,9 @@ namespace auth.Logic
             _dbService = service;
         }
 
-        public string CreateUser(User user)
+        public async Task<string> CreateUser(User user)
         {
-            var _user = _dbService.Create(user);
+            var _user = await _dbService.Create(user);
             return _user.UserID;
         }
         public void UpdateUser()
@@ -27,8 +27,8 @@ namespace auth.Logic
         }
         public void SetUserPassword(string userId, string password)
         {
-            _dbService.SetPassword(userId, password);
-
+            var result = _dbService.SetPassword(userId, password);
+            
         }
         //public void GetUserDetails()
         //{

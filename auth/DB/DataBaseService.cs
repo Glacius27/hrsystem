@@ -20,9 +20,10 @@ namespace auth.database
             _users = database.GetCollection<User>("Users");
         }
 
-        public User Create(User user)
+        public async Task<User> Create(User user)
         {
-            _users.InsertOne(user);
+            //_users.InsertOne(user);
+            await _users.InsertOneAsync(user); 
             return user;
         }
 

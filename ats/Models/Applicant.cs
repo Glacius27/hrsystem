@@ -1,11 +1,15 @@
 ﻿using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using shraredclasses.DTOs;
 
 namespace ats.Models
 {
 	public class Applicant
 	{
-		public string ID { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string ID { get; set; }
 		public string UserID { get; set; }
 		public string VacancyID { get; set; }
 		public Questoinare Questionare { get; set; }
@@ -18,7 +22,6 @@ namespace ats.Models
 			this.JobOffer = new JobOffer();
 		}
 	}
-
 
 
 	public class Questoinare : SetUpApplicantQuestionareDTO { }

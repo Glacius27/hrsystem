@@ -7,12 +7,19 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="prometheus-net" Version="8.0.0" />
     <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
     <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.14" />
+    <PackageReference Include="MassTransit" Version="8.0.14" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,9 +28,22 @@
     <None Remove="prometheus-net" />
     <None Remove="prometheus-net.AspNetCore" />
     <None Remove="prometheus-net.AspNetCore.HealthChecks" />
+    <None Remove="Models\" />
+    <None Remove="Env\" />
+    <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <None Remove="MassTransit.RabbitMQ" />
+    <None Remove="MassTransit" />
+    <None Remove="MassTransit.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\" />
     <Folder Include="Logic\" />
+    <Folder Include="Models\" />
+    <Folder Include="Env\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\shraredclasses\shraredclasses.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

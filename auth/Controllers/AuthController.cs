@@ -14,6 +14,7 @@ using shraredclasses.Models;
 
 namespace auth.Controllers
 {
+    [ApiController]
     public class AuthController : Controller
     {
         private readonly ILogger<AuthController> _logger;

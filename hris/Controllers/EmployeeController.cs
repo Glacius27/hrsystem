@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using hris.Logic;
+using hris.Models;
 
 namespace hris.Controllers;
 
@@ -6,34 +8,32 @@ namespace hris.Controllers;
 [Route("[controller]")]
 public class EmployeeController : ControllerBase
 {
-    //private static readonly string[] Summaries = new[]
-    //{
-    //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    //};
-
+    
     private readonly ILogger<EmployeeController> _logger;
+    private HrIsService _hrIsService;
 
-    public EmployeeController(ILogger<EmployeeController> logger)
+    public EmployeeController(ILogger<EmployeeController> logger, HrIsService hrIsService)
     {
         _logger = logger;
+        _hrIsService = hrIsService;
     }
-    /*тут должен быть методы замещения штатной единицы
-     * метод приема на работу (создания сотрудника)*/
 
-
-
-    [HttpPost(Name = "GetWeatherForecast")]
-    public async Task<IActionResult> Create()
+  
+    [HttpPut]
+    [Route("/Employee/Vacant")]
+    public async Task<IActionResult> SetPositionVacant(string positionID)
     {
-        //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //{
-        //    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-        //    TemperatureC = Random.Shared.Next(-20, 55),
-        //    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        //})
-        //.ToArray();
+        await _hrIsService.SetPositionVacant(positionID);
         return Ok();
     }
-    
+
+
+    //[HttpPost]
+    //[Route("/Employee")]
+    //public async Task<IActionResult> CreateEmployee(Employee employee)
+    //{
+    //    await _hrIsService.CreateEmployee(employee);
+    //    return Ok();
+    //}
 }
 

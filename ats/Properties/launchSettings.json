@@ -11,9 +11,8 @@
   "profiles": {
     "http": {
       "commandName": "Project",
-      "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5239",
+      "applicationUrl": "http://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -29,7 +28,7 @@
     "ats": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:55239",
+      "applicationUrl": "http://localhost:44556",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
