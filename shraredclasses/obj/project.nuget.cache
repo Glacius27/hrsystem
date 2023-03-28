@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "56US02VxvVbyZnAel5pIXybSOGa0vUy9tci3i3ig/NslCWz/9w2UXNwVbQuVngWHcd88MEojZGbY9U9pznzERA==",
+  "dgSpecHash": "oEsapyt7epKfHQRJ4dRBnCpVPXmk8vhY4NLpB+zRPrOfvm1LzSUrTm4mrsX4EUL7cEV1IydETKPE3BQivu+5Fg==",
   "success": true,
   "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/shraredclasses/shraredclasses.csproj",
   "expectedPackageFiles": [
-    "/Users/german/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+    "/Users/german/.nuget/packages/mongodb.bson/2.19.1/mongodb.bson.2.19.1.nupkg.sha512",
+    "/Users/german/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/german/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

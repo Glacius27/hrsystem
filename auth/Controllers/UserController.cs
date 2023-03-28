@@ -28,13 +28,13 @@ namespace auth.Controllers
             }
 
         #region
-        [HttpPost]
-        [Route("/User")]
-        public async Task <IActionResult> CreateUser(CreateUserRequestDTO createUserRequest)
-        {           
-            var _user = await _userService.CreateUser(new User(createUserRequest));
-            return Ok(new WsResponse() { Data = _user });            
-        }
+        //[HttpPost]
+        //[Route("/User")]
+        //public async Task <IActionResult> CreateUser(CreateUserRequestDTO createUserRequest)
+        //{           
+        //    var _user = await _userService.CreateUser(new User(createUserRequest));
+        //    return Ok(new WsResponse() { Data = _user });            
+        //}
 
         #endregion
         [HttpPut]

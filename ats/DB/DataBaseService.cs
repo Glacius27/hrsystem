@@ -1,6 +1,7 @@
 ﻿using System;
 using MongoDB.Driver;
 using ats.Models;
+using shraredclasses.Commands;
 
 namespace ats.DB
 {
@@ -8,7 +9,8 @@ namespace ats.DB
     {
         private readonly IMongoCollection<Vacancy> _vacancies;
         private readonly IMongoCollection<VacancyResponse> _vacancyResponses;
-        //private readonly IMongoCollection<Applicant> _applicants;
+        private readonly IMongoCollection<CreateUser> _createUserRequests;
+        private readonly IMongoCollection<Applicant> _applicants;
 
         public DataBaseService(IDataBaseSettings settings)
         {
@@ -16,7 +18,8 @@ namespace ats.DB
             var database = client.GetDatabase(settings.DatabaseName);
             _vacancies = database.GetCollection<Vacancy>("Vacancies");
             _vacancyResponses = database.GetCollection<VacancyResponse>("VacanciesResponses");
-            //_applicants = database.GetCollection<Vacancy>("Applicants");
+            _createUserRequests = database.GetCollection<CreateUser>("CreateUserRequests");
+            _applicants = database.GetCollection<Applicant>("Applicants");
         }
 
         public Vacancy Create(Vacancy vacancy)
@@ -31,6 +34,21 @@ namespace ats.DB
             return vacancyResponse;
         }
 
+        public CreateUser Create(CreateUser createUserRequest)
+        {
+            _createUserRequests.InsertOne(createUserRequest);
+            return createUserRequest;
+        }
+
+
+        public Applicant Create(Applicant applicant)
+        {
+            _applicants.InsertOne(applicant);
+            return applicant;
+        }
+
+        public DeleteResult DeleteCreateUser(string createUserRequestCorrelationID) =>
+            _createUserRequests.DeleteOne(x => x.CorrelationID == createUserRequestCorrelationID);
 
 
         public IList<Vacancy> Read() =>
@@ -38,6 +56,10 @@ namespace ats.DB
 
         public Vacancy Find(string vacancyId) =>
             _vacancies.Find(x => x.VacancyID == vacancyId).SingleOrDefault();
+
+
+        public VacancyResponse FindVacancyResponse(string vacancyResponseId) =>
+            _vacancyResponses.Find(x => x.VacancyResponseID == vacancyResponseId).SingleOrDefault();
 
 
         public UpdateResult Update(string vacancyId, Vacancy vacancy)
@@ -75,7 +97,7 @@ namespace ats.DB
         public DeleteResult Delete(string vacancyId) =>
             _vacancies.DeleteOne(x => x.VacancyID == vacancyId);
 
-
+        
     }
 }
 

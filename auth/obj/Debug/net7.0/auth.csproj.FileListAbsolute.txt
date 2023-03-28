@@ -58,3 +58,9 @@
 /Users/german/Projects/gitrepos/hrsystem/auth/obj/Debug/net7.0/auth.pdb
 /Users/german/Projects/gitrepos/hrsystem/auth/obj/Debug/net7.0/auth.genruntimeconfig.cache
 /Users/german/Projects/gitrepos/hrsystem/auth/obj/Debug/net7.0/ref/auth.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.Abstractions.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.AspNetCoreIntegration.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.RabbitMqTransport.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/RabbitMQ.Client.dll

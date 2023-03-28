@@ -12,7 +12,10 @@ using Prometheus;
 using auth.auth;
 using auth.database;
 using Microsoft.OpenApi.Models;
-
+using MassTransit;
+using auth.MassTransit;
+using auth.Logic;
+using shraredclasses.Commands;
 
 namespace application
 {
@@ -58,6 +61,7 @@ namespace application
                     }
                 });
             });
+            services.AddSingleton<UserService>();
             services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
             services.AddSingleton<IDataBaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
             services.AddSingleton<DataBaseService>();
@@ -76,6 +80,26 @@ namespace application
                             ValidateIssuerSigningKey = true,
                         };
                     });
+
+            services.AddMassTransit(x =>
+            {
+                x.AddConsumer<CreateUserConsumer>();
+                
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                {
+                    cfg.Host(new Uri("rabbitmq://localhost"), h =>
+                    {
+                        h.Username("guest");
+                        h.Password("guest");
+                    });
+                    cfg.ReceiveEndpoint("createuser", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(2, 100));
+                        ep.ConfigureConsumer<CreateUserConsumer>(provider);
+                    });
+                }));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

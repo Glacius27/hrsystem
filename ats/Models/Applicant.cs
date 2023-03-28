@@ -2,6 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using shraredclasses.DTOs;
+using shraredclasses.Commands;
 
 namespace ats.Models
 {
@@ -21,7 +22,15 @@ namespace ats.Models
 			this.Questionare = new Questoinare();
 			this.JobOffer = new JobOffer();
 		}
-	}
+        public Applicant(CreateUserResponse createUserResponse)
+        {
+			this.UserID = createUserResponse.UserID;
+            this.Questionare = new Questoinare();
+            this.JobOffer = new JobOffer();
+			this.VacancyID = createUserResponse.VacancyID;
+			this.ApplicantStatus = ApplicantStatus.Registred;
+        }
+    }
 
 
 	public class Questoinare : SetUpApplicantQuestionareDTO { }

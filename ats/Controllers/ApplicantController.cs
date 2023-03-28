@@ -62,12 +62,18 @@ public class ApplicantController : ControllerBase
     //}
     [HttpPut]
     [Route("/Vacancy/IntreviewInvite")]
-    public async Task<IActionResult> ChooseApplicant(string vacancyId, string vacancyResponseID)
+    public async Task<IActionResult> InviteToInterview(string vacancyId, string vacancyResponseID)
     {
-        var result = _atsService.
+        var result = _atsService.InviteToInterview(vacancyId, vacancyResponseID);
         return Accepted();
     }
-
+    [HttpPut]
+    [Route("/Vacancy/Applicant")]
+    public async Task<IActionResult> ChooseApplicant(string vacancyId, string vacancyResponseID)
+    {
+        var result = _atsService.ChooseApplicant(vacancyId, vacancyResponseID);
+        return Accepted();
+    }
 
 }
 

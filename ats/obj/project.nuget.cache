@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NawXMHU7iF31z7/5Aea23CmxYVYioP9EAraOcztH18xeelM7N/QxfcOOSK/0zJRFAfX/fSLVVs4NjZYpWzf4cg==",
+  "dgSpecHash": "TdVZetewt5vB3i0rT3I6wQDnGMt6qDhzHpdrB/4OF1WCG/1i1bfL6Vy9x/KVBHvDsn3Gdqzq1x88kaoKV85dpA==",
   "success": true,
   "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/ats/ats.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,7 @@
     "/Users/german/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "/Users/german/.nuget/packages/mongodb.bson/2.19.0/mongodb.bson.2.19.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/mongodb.bson/2.19.1/mongodb.bson.2.19.1.nupkg.sha512",
     "/Users/german/.nuget/packages/mongodb.driver/2.19.0/mongodb.driver.2.19.0.nupkg.sha512",
     "/Users/german/.nuget/packages/mongodb.driver.core/2.19.0/mongodb.driver.core.2.19.0.nupkg.sha512",
     "/Users/german/.nuget/packages/mongodb.libmongocrypt/1.7.0/mongodb.libmongocrypt.1.7.0.nupkg.sha512",

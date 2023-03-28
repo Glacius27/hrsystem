@@ -34,6 +34,7 @@
     <None Remove="MassTransit.RabbitMQ" />
     <None Remove="MassTransit" />
     <None Remove="MassTransit.AspNetCore" />
+    <None Remove="MongoDB.Bson" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\" />

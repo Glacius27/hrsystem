@@ -3,6 +3,8 @@ using ats.Controllers;
 using ats.Models;
 using shraredclasses.DTO;
 using ats.DB;
+using MassTransit;
+using shraredclasses.Commands;
 
 namespace ats.Logic
 {
@@ -10,10 +12,14 @@ namespace ats.Logic
 	{
         private readonly ILogger<AtsService> _logger;
         private DataBaseService _dataBaseService;
-        public AtsService(ILogger<AtsService> logger, DataBaseService dataBaseService)
+        private readonly IBus _bus;
+
+
+		public AtsService(ILogger<AtsService> logger, DataBaseService dataBaseService, IBus bus)
         {
             _logger = logger;
             _dataBaseService = dataBaseService;
+			_bus = bus;
         }
 
 
@@ -36,9 +42,42 @@ namespace ats.Logic
 			return response.VacancyResponseID;
 
 		}
-		public void RegisterVacancyResponse()
-		{ }
+		
+        public async Task<bool> InviteToInterview(string vacancyID, string vacancyResponseID)
+        {
+            Uri uri = new Uri("rabbitmq://localhost/notification");
+            var endPoint = await _bus.GetSendEndpoint(uri);
+			await endPoint.Send(new CreateNotification() { PositionName = "Lead Developer", Email = "g.zabludin@gmail.com", NotificationType = NotificationType.Interview });
+			return true;
+        }
 
-	}
+        public async Task<bool> ChooseApplicant(string vacancyID, string vacancyResponseID)
+        {
+			var data = _dataBaseService.FindVacancyResponse(vacancyResponseID);
+			Uri uri = new Uri("rabbitmq://localhost/createuser");
+			var endPoint = await _bus.GetSendEndpoint(uri);
+			var guid = Guid.NewGuid().ToString();
+
+			var createUserRequest = new CreateUser() { CorrelationID = guid, Email = data.Email, FirstName = data.FirstName, LastName = data.LastName, VacancyId = vacancyID };
+			var result = _dataBaseService.Create(createUserRequest);
+
+            await endPoint.Send(createUserRequest);
+			return true;
+        }
+
+		public async Task<bool> CreateApplicant(CreateUserResponse createUserResponse)
+		{
+			var applicant = new Applicant(createUserResponse);
+			var result = _dataBaseService.Create(applicant);
+
+			var deleteresult = _dataBaseService.DeleteCreateUser(createUserResponse.CorrelationID);
+
+            Uri uri = new Uri("rabbitmq://localhost/notification");
+            var endPoint = await _bus.GetSendEndpoint(uri);
+            await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = "g.zabludin@gmail.com", NotificationType = NotificationType.Register });
+            return true;
+
+        }
+    }
 }
 

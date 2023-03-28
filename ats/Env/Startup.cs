@@ -64,6 +64,7 @@ namespace hris.Env
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<CreateVacancyConsumer>();
+                x.AddConsumer<CreateUserResponseConsumer>();
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
                     cfg.Host(new Uri("rabbitmq://localhost"), h =>
@@ -76,6 +77,12 @@ namespace hris.Env
                         ep.PrefetchCount = 16;
                         ep.UseMessageRetry(r => r.Interval(2, 100));
                         ep.ConfigureConsumer<CreateVacancyConsumer>(provider);
+                    });
+                    cfg.ReceiveEndpoint("createUserResponse", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(2, 100));
+                        ep.ConfigureConsumer<CreateUserResponseConsumer>(provider);
                     });
                 }));
             });

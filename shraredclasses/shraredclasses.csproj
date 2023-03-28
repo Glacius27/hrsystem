@@ -11,6 +11,7 @@
     <None Remove="Commands\" />
     <None Remove="Classes\" />
     <None Remove="Events\" />
+    <None Remove="MongoDB.Bson" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
@@ -19,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="MongoDB.Bson" Version="2.19.1" />
   </ItemGroup>
 </Project>
