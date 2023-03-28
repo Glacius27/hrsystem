@@ -8,6 +8,11 @@
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/AWSSDK.Core.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/AWSSDK.SecurityToken.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/DnsClient.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.Abstractions.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.AspNetCoreIntegration.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.RabbitMqTransport.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
@@ -25,6 +30,7 @@
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Prometheus.NetStandard.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Prometheus.AspNetCore.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Prometheus.AspNetCore.HealthChecks.dll
+/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/RabbitMQ.Client.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/SharpCompress.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Snappier.dll
 /Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
@@ -58,9 +64,3 @@
 /Users/german/Projects/gitrepos/hrsystem/auth/obj/Debug/net7.0/auth.pdb
 /Users/german/Projects/gitrepos/hrsystem/auth/obj/Debug/net7.0/auth.genruntimeconfig.cache
 /Users/german/Projects/gitrepos/hrsystem/auth/obj/Debug/net7.0/ref/auth.dll
-/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.dll
-/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.Abstractions.dll
-/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.AspNetCoreIntegration.dll
-/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll
-/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/MassTransit.RabbitMqTransport.dll
-/Users/german/Projects/gitrepos/hrsystem/auth/bin/Debug/net7.0/RabbitMQ.Client.dll

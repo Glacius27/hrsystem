@@ -24,7 +24,7 @@ namespace auth.MassTransit
         {
             var data = context.Message;
             var response = await _userService.CreateUser(new User(data));
-            await context.RespondAsync(new CreateUserResponse() { UserID = response, CorrelationID = data.CorrelationID });
+            await context.RespondAsync(new CreateUserResponse() { UserID = response, CorrelationID = data.CorrelationID, Email = data.Email, VacancyID = data.VacancyId});
         }
     }
 }

@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using ats.Models;
 using shraredclasses.Commands;
+using shraredclasses.DTOs;
 
 namespace ats.DB
 {
@@ -68,6 +69,14 @@ namespace ats.DB
                     .Set(x => x.PositionName, vacancy.PositionName)
                     .Set(x => x.City, vacancy.City);
             var result = _vacancies.UpdateOne(x => x.VacancyID == vacancyId, update);
+            return result;
+        }
+
+        public UpdateResult AddApplicantQuestionnare(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnare)
+        {
+            var update = Builders<Applicant>.Update
+                    .Set(x => x.Questionare, setUpApplicantQuestionnare);
+            var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
             return result;
         }
 

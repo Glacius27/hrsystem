@@ -75,5 +75,12 @@ public class ApplicantController : ControllerBase
         return Accepted();
     }
 
+    [HttpPut]
+    [Route("/Vacancy/Applicant/Questionnaire")]
+    public async Task<IActionResult> SetupQuestionnaire(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnareDTO)
+    {
+        var result = _atsService.SetUpQuestionnare(applicantId, setUpApplicantQuestionnareDTO);
+        return Accepted();
+    }
 }
 

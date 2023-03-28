@@ -5,6 +5,7 @@ using shraredclasses.DTO;
 using ats.DB;
 using MassTransit;
 using shraredclasses.Commands;
+using shraredclasses.DTOs;
 
 namespace ats.Logic
 {
@@ -45,9 +46,11 @@ namespace ats.Logic
 		
         public async Task<bool> InviteToInterview(string vacancyID, string vacancyResponseID)
         {
+            var data = _dataBaseService.FindVacancyResponse(vacancyResponseID);
+
             Uri uri = new Uri("rabbitmq://localhost/notification");
             var endPoint = await _bus.GetSendEndpoint(uri);
-			await endPoint.Send(new CreateNotification() { PositionName = "Lead Developer", Email = "g.zabludin@gmail.com", NotificationType = NotificationType.Interview });
+			await endPoint.Send(new CreateNotification() { PositionName = "Lead Developer", Email = data.Email, NotificationType = NotificationType.Interview });
 			return true;
         }
 
@@ -74,9 +77,15 @@ namespace ats.Logic
 
             Uri uri = new Uri("rabbitmq://localhost/notification");
             var endPoint = await _bus.GetSendEndpoint(uri);
-            await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = "g.zabludin@gmail.com", NotificationType = NotificationType.Register });
+            await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = applicant.Email, NotificationType = NotificationType.Register });
             return true;
 
+        }
+
+        public async Task<bool> SetUpQuestionnare(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnare )
+        {
+			var result = _dataBaseService.AddApplicantQuestionnare(applicantId, setUpApplicantQuestionnare);
+			return true;
         }
     }
 }

@@ -12,7 +12,8 @@ namespace shraredclasses.Commands
 	public enum NotificationType
     {
 		Interview,
-		Register
+		Register,
+		Greetings
 	}
 }
 

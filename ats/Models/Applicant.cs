@@ -13,7 +13,8 @@ namespace ats.Models
         public string ID { get; set; }
 		public string UserID { get; set; }
 		public string VacancyID { get; set; }
-		public Questoinare Questionare { get; set; }
+        public string Email { get; set; }
+        public Questoinare Questionare { get; set; }
 		public JobOffer JobOffer { get; set; }
 		public ApplicantStatus ApplicantStatus { get; set; }
 
@@ -25,15 +26,16 @@ namespace ats.Models
         public Applicant(CreateUserResponse createUserResponse)
         {
 			this.UserID = createUserResponse.UserID;
-            this.Questionare = new Questoinare();
+			this.Questionare = new Questoinare();
             this.JobOffer = new JobOffer();
 			this.VacancyID = createUserResponse.VacancyID;
 			this.ApplicantStatus = ApplicantStatus.Registred;
+			this.Email = createUserResponse.Email;
         }
     }
 
 
-	public class Questoinare : SetUpApplicantQuestionareDTO { }
+	public class Questoinare : SetUpApplicantQuestionnareDTO { }
 	
 
 	public enum ApplicantStatus

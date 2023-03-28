@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="MassTransit\" />
+    <None Remove="DB\" />
+    <None Remove="Env\" />
+    <None Remove="Logic\" />
+    <None Remove="prometheus-net" />
+    <None Remove="prometheus-net.AspNetCore" />
+    <None Remove="prometheus-net.AspNetCore.HealthChecks" />
+    <None Remove="MassTransit" />
+    <None Remove="MassTransit.RabbitMQ" />
+    <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MassTransit\" />
+    <Folder Include="DB\" />
+    <Folder Include="Env\" />
+    <Folder Include="Logic\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\shraredclasses\shraredclasses.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="prometheus-net" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.14" />
+    <PackageReference Include="MassTransit" Version="8.0.14" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
+  </ItemGroup>
+</Project>

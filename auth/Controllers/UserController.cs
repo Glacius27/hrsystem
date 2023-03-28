@@ -83,17 +83,17 @@ namespace auth.Controllers
         #endregion
 
 
-        [Authorize]
-            [HttpPut]
-            [Route("{userId}")]
-            public IActionResult UpdateUser(string userId, User user)
-            {
-                var checkresult = CheckIdentity(userId);
-                if (!checkresult)
-                    return Forbid();
-                _dbService.Update(userId, user);
-                return Ok(new WsResponse { Message = "User updated" });
-            }
+        //[Authorize]
+        //    [HttpPut]
+        //    [Route("{userId}")]
+        //    public IActionResult UpdateUser(string userId, User user)
+        //    {
+        //        var checkresult = CheckIdentity(userId);
+        //        if (!checkresult)
+        //            return Forbid();
+        //        _dbService.Update(userId, user);
+        //        return Ok(new WsResponse { Message = "User updated" });
+        //    }
 
             private bool CheckIdentity(string userID)
             {

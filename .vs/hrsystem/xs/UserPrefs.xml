@@ -1,30 +1,50 @@
-﻿<Properties StartupConfiguration="{C984C5E5-4624-4EC9-A1A6-B53C97CB32ED}|http">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties StartupConfiguration="{DC6CF28E-6B56-41CD-8BCC-1800F9E3E81E}|http">
+  <MonoDevelop.Ide.ItemProperties.notification PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.hris PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/auth/Controllers/UserController.cs" relfile="auth/Controllers/UserController.cs" line="34" column="1" />
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/ats/MassTransit/CreateVacancyConsumer.cs" relfile="ats/MassTransit/CreateVacancyConsumer.cs" line="20" column="1" />
+      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/notification/MassTransit/CreateNotificationConsumer.cs" relfile="notification/MassTransit/CreateNotificationConsumer.cs" line="22" column="1" />
+      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/notification/Logic/NotificationService.cs" relfile="notification/Logic/NotificationService.cs" line="11" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="ats/Logic/AtsService.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="notification/MassTransit/CreateNotificationConsumer.cs">
     <Files>
-      <File FileName="hris/Models/Employee.cs" />
-      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" Line="22" Column="53" />
-      <File FileName="ats/Logic/AtsService.cs" Line="68" Column="10" />
-      <File FileName="ats/Controllers/ApplicantController.cs" Line="74" Column="49" />
-      <File FileName="ats/DB/DataBaseService.cs" Line="36" Column="40" />
-      <File FileName="ats/Models/VacancyResponse.cs" />
+      <File FileName="hris/Models/Employee.cs" Line="4" Column="15" />
+      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" Line="27" Column="1" />
+      <File FileName="ats/Logic/AtsService.cs" Line="71" Column="52" />
+      <File FileName="ats/Controllers/ApplicantController.cs" />
+      <File FileName="ats/DB/DataBaseService.cs" />
+      <File FileName="ats/Models/VacancyResponse.cs" Line="1" Column="1" />
       <File FileName="ats/Models/Vacancy.cs" />
-      <File FileName="hris/Controllers/EmployeeController.cs" />
-      <File FileName="auth/Models/User.cs" Line="30" Column="6" />
-      <File FileName="hris/Logic/HrIsService.cs" Line="61" Column="131" />
-      <File FileName="shraredclasses/Commands/CreateVacancy.cs" Line="1" Column="1" />
-      <File FileName="shraredclasses/Commands/InviteToInterview.cs" Line="9" Column="35" />
-      <File FileName="shraredclasses/DTOs/CreateUserRequestDTO.cs" Line="5" Column="28" />
-      <File FileName="ats/DB/DataBaseSettings.cs" Line="1" Column="1" />
+      <File FileName="hris/Controllers/EmployeeController.cs" Line="37" Column="6" />
+      <File FileName="auth/Models/User.cs" />
+      <File FileName="hris/Logic/HrIsService.cs" Line="65" Column="46" />
+      <File FileName="shraredclasses/Commands/CreateVacancy.cs" />
+      <File FileName="ats/DB/DataBaseSettings.cs" />
+      <File FileName="auth/MassTransit/CreateUserConsumer.cs" Line="32" Column="1" />
+      <File FileName="auth/Env/Program.cs" Line="16" Column="1" />
+      <File FileName="auth/Env/Startup.cs" Line="84" Column="1" />
+      <File FileName="auth/Properties/launchSettings.json" Line="24" Column="32" />
+      <File FileName="shraredclasses/Commands/CreateUserResponse.cs" Line="13" Column="1" />
+      <File FileName="shraredclasses/Commands/CreateUser.cs" Line="14" Column="22" />
+      <File FileName="auth/Logic/UserService.cs" Line="1" Column="1" />
+      <File FileName="auth/Controllers/UserController.cs" Line="34" Column="1" />
+      <File FileName="hris/DB/EmployeeContext.cs" Line="16" Column="1" />
+      <File FileName="ats/Models/Applicant.cs" Line="34" Column="10" />
+      <File FileName="shraredclasses/DTOs/SetUpApplicantQuestionareDTO.cs" Line="24" Column="1" />
+      <File FileName="shraredclasses/shraredclasses.csproj" Line="1" Column="1" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.103/Microsoft.Common.CurrentVersion.targets" Line="4862" Column="5" />
+      <File FileName="notification/MassTransit/CreateNotificationConsumer.cs" Line="26" Column="1" />
+      <File FileName="notification/Logic/NotificationService.cs" Line="40" Column="1" />
+      <File FileName="notification/Env/Startup.cs" Line="81" Column="18" />
+      <File FileName="hris/appsettings.json" Line="1" Column="1" />
+      <File FileName="notification/Models/Letter.cs" Line="11" Column="19" />
+      <File FileName="notification/Properties/launchSettings.json" Line="15" Column="47" />
+      <File FileName="notification/DB/LetterContext.cs" Line="9" Column="22" />
+      <File FileName="notification/Env/Program.cs" Line="1" Column="1" />
+      <File FileName="hris/Properties/launchSettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,21 +53,29 @@
             <Node name="ats" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="DB" expanded="True" />
-              <Node name="Logic" expanded="True">
-                <Node name="AtsService.cs" selected="True" />
-              </Node>
+            </Node>
+            <Node name="auth" expanded="True">
+              <Node name="Env" expanded="True" />
+              <Node name="MassTransit" expanded="True" />
+            </Node>
+            <Node name="hris" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Logic" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="notification" expanded="True">
+              <Node name="DB" expanded="True" />
+              <Node name="Env" expanded="True" />
+              <Node name="Logic" expanded="True" />
               <Node name="MassTransit" expanded="True" />
               <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="shraredclasses" expanded="True">
-              <Node name="Commands" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>

@@ -28,12 +28,12 @@ public class EmployeeController : ControllerBase
     }
 
 
-    //[HttpPost]
-    //[Route("/Employee")]
-    //public async Task<IActionResult> CreateEmployee(Employee employee)
-    //{
-    //    await _hrIsService.CreateEmployee(employee);
-    //    return Ok();
-    //}
+    [HttpPost]
+    [Route("/Employee")]
+    public async Task<IActionResult> CreateEmployee(Employee employee)
+    {
+        await _hrIsService.CreateEmployee(employee);
+        return Ok();
+    }
 }
 
