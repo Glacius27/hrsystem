@@ -67,13 +67,30 @@ public class ApplicantController : ControllerBase
         var result = _atsService.InviteToInterview(vacancyId, vacancyResponseID);
         return Accepted();
     }
+    //[HttpPut]
+    //[Route("/Vacancy/Applicant")]
+    //public async Task<IActionResult> ChooseApplicant(string vacancyId, string vacancyResponseID)
+    //{
+    //    var result = _atsService.ChooseApplicant(vacancyId, vacancyResponseID);
+    //    return Accepted();
+    //}
+
+    [HttpPost]
+    [Route("/Vacancy/Applicant")]
+    public async Task<IActionResult> CreateApplicantID()
+    {
+        var result = await _atsService.CreateApplicantID();
+        return Ok(new WsResponse() { Data = result.ID});
+    }
+
     [HttpPut]
     [Route("/Vacancy/Applicant")]
-    public async Task<IActionResult> ChooseApplicant(string vacancyId, string vacancyResponseID)
+    public async Task<IActionResult> CreateApplicant(string applicantId, CreateApplicantDTO createApplicantDTO)
     {
-        var result = _atsService.ChooseApplicant(vacancyId, vacancyResponseID);
-        return Accepted();
+        var result = await _atsService.CreateApplicant(applicantId, createApplicantDTO);
+        return Ok();
     }
+
 
     [HttpPut]
     [Route("/Vacancy/Applicant/Questionnaire")]

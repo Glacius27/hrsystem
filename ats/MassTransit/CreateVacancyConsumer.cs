@@ -19,7 +19,7 @@ namespace ats.MassTransit
         public async Task Consume(ConsumeContext<CreateVacancy> context)
         {
             var createVacancyRequest = context.Message; 
-            var response = _atsService.CreateVacancy(new Vacancy(createVacancyRequest));
+            var response = _atsService.CreateVacancy(createVacancyRequest);
         }
     }
 }

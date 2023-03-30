@@ -22,6 +22,7 @@ namespace ats.Models
 		{
 			this.Questionare = new Questoinare();
 			this.JobOffer = new JobOffer();
+			this.ApplicantStatus = ApplicantStatus.Registred;
 		}
         public Applicant(CreateUserResponse createUserResponse)
         {

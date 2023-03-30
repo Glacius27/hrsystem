@@ -72,6 +72,29 @@ namespace ats.DB
             return result;
         }
 
+        public UpdateResult AddEmailToApplicant(string applicantId, VacancyResponse vacancyResponse)
+        {
+            var update = Builders<Applicant>.Update
+                    .Set(x => x.Email, vacancyResponse.Email);
+            var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
+            return result;
+        }
+
+        public UpdateResult AddVacancyIdToApplicant(string applicantId, string vacancyId)
+        {
+            var update = Builders<Applicant>.Update
+                    .Set(x => x.VacancyID, vacancyId);
+            var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
+            return result;
+        }
+        public UpdateResult AddUserIdToApplicant(CreateUserResponse createUserResponse)
+        {
+            var update = Builders<Applicant>.Update
+                    .Set(x => x.UserID, createUserResponse.UserID);
+            var result = _applicants.UpdateOne(x => x.Email == createUserResponse.Email, update);
+            return result;
+        }
+
         public UpdateResult AddApplicantQuestionnare(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnare)
         {
             var update = Builders<Applicant>.Update

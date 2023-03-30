@@ -35,12 +35,14 @@
     <None Remove="MassTransit" />
     <None Remove="MassTransit.AspNetCore" />
     <None Remove="MongoDB.Bson" />
+    <None Remove="MassTransit\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\" />
     <Folder Include="Logic\" />
     <Folder Include="Models\" />
     <Folder Include="Env\" />
+    <Folder Include="MassTransit\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\shraredclasses\shraredclasses.csproj">

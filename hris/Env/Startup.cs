@@ -13,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using hris.Logic;
 using MassTransit;
 using shraredclasses.Commands;
+using hris.MassTransit;
 
 namespace hris.Env
 {
@@ -32,6 +33,7 @@ namespace hris.Env
             services.AddControllers();
             services.AddSingleton<HrIsService>();
             services.AddSingleton<CreateVacancy>();
+            services.AddSingleton<CreateVacancyResponseConsumer>();
 
             services.AddSwaggerGen(option =>
             {
@@ -62,18 +64,25 @@ namespace hris.Env
             });
 
 
+
             services.AddMassTransit(x =>
             {
-
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
+                x.AddConsumer<CreateVacancyResponseConsumer>();
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
-                    config.Host(new Uri("rabbitmq://localhost"), h =>
+                    cfg.Host(new Uri("rabbitmq://localhost"), h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
                     });
+                    cfg.ReceiveEndpoint("createvacancyresponse", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(2, 100));
+                        ep.ConfigureConsumer<CreateVacancyResponseConsumer>(provider);
+                    });
+                    
                 }));
-                //x.AddRequestClient<CreateVacancy>();
             });
 
 

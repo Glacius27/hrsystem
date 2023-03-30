@@ -7,6 +7,8 @@ using MassTransit;
 using shraredclasses.Commands;
 using System.Threading;
 using MassTransit.Clients;
+using Npgsql.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace hris.Logic
 {
@@ -21,46 +23,66 @@ namespace hris.Logic
             _bus = bus;
         }
 
-        public async Task SetPositionVacant(string positionID)
+        public async Task SetPositionVacant(string createVacantPositionRequestId, string positionID)
 		{
+            var correlationID = Guid.NewGuid().ToString();
+            using (CreateVacantPositionRequestContext db = new CreateVacantPositionRequestContext())
+            {
 
-            #region
-            //var serviceAddress = new Uri("rabbitmq://localhost/check-order-status");
-            //var client = _bus.CreateRequestClient<CreateVacancy>(serviceAddress);
-            //var response = await _client.GetResponse<CreateVacancy>(new CreateVacancy());
+                var request = await db.CreateVacantPositionRequests.FirstOrDefaultAsync(x => x.ID == createVacantPositionRequestId);
+                //var requset = await db.CreateVacantPositionRequests
+                //                .Where(x => x.ID == createVacantPositionRequestId).FirstOrDefaultAsync();
+                                
+                request.PositionID = positionID;
+                request.CorrelationID = correlationID;
+                db.SaveChangesAsync();
+            }
 
-
-            //using (var request = _client.Create(new CreateVacancy()))
-            //{
-            //    var response = await request.GetResponse<CreateVacancy>();
-            //    //p = response.Message.Product;
-            //}
-
-
-
-            ////var serviceAddress = new Uri("rabbitmq://localhost/check-order-status");
-            ////var client = _bus.CreateRequestClient<CreateVacancy>(serviceAddress);
-            ////_bus.CreateRequestClient<CreateVacancy>();
-            ////var response = await client.GetResponse<CreateVacancyResult>(new { OrderId = id });
-
-            ////var response = await client.GetResponse<OrderStatusResult>(new { OrderId = id });
-            ////var serviceAddress = new Uri("rabbitmq://localhost/check-order-status");
-            ////var client = _bus.CreateRequestClient<CreateVacancyCommand>(serviceAddress);
-            ////_bus.CreateRequestClient<CreateVacancyCommand>();
-            ////var response = await client.GetResponse<OrderStatusResult>(new { OrderId = id });
-
-
-            ////var response = await _client.GetResponse<CreateVacancyCommandResponse>(new CreateVacancyCommand());
-
-
-            //#region
-            ////Ireq
-            #endregion
             Uri uri = new Uri("rabbitmq://localhost/createvacancy");
             var endPoint = await _bus.GetSendEndpoint(uri);
-            await endPoint.Send(new CreateVacancy() { PositionID = positionID, City = "Moscow", PositionName = "Lead Developer"});
-            
+            await endPoint.Send(new CreateVacancy() { PositionID = positionID, City = "Moscow", PositionName = "Lead Developer", CorrelationID = correlationID});
         }
+
+        public async Task<string> CreateVacantPositionRequest()
+        {
+            using (CreateVacantPositionRequestContext db = new CreateVacantPositionRequestContext())
+            {
+                var result = await db.CreateVacantPositionRequests.AddAsync(new CreateVacantPositionRequest() { CorrelationID = "null", PositionID = "null", VacancyID = "null"});
+                await db.SaveChangesAsync();
+                return result.Entity.ID;
+            }
+        }
+
+        public async Task SetUpVacancyIDCreateVacantPositionRequest(CreateVacancyResponse response)
+        {
+            using (CreateVacantPositionRequestContext db = new CreateVacantPositionRequestContext())
+            {
+                var request = db.CreateVacantPositionRequests.FirstOrDefault(x => x.CorrelationID == response.CorrelationID);
+                request.VacancyID = response.VacancyID;
+                db.SaveChangesAsync();
+            }
+        }
+
+        public async Task<string> GetVacancyID(string positionId)
+        {
+            using (CreateVacantPositionRequestContext db = new CreateVacantPositionRequestContext())
+            {
+                var request = db.CreateVacantPositionRequests.FirstOrDefault(x => x.PositionID == positionId);
+                return request.VacancyID;
+            }
+        }
+
+
+        //public async Task SetUPVacantPositionRequest()
+        //{
+        //    using (CreateVacantPositionRequestContext db = new CreateVacantPositionRequestContext())
+        //    {
+        //        await db.CreateVacantPositionRequests.AddAsync(new CreateVacantPositionRequest());
+        //        await db.SaveChangesAsync();
+        //    }
+        //}
+
+
 
         public async Task CreateEmployee(Employee emp)
 		{

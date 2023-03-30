@@ -19,8 +19,8 @@ namespace ats.MassTransit
 
         public async Task Consume(ConsumeContext<CreateUserResponse> context)
         {
-            var data = context.Message;
-            await _atsService.CreateApplicant(data);
+            var createUserResponse = context.Message;
+            await _atsService.SetUserIdToApplicant(createUserResponse);
         }
     }
 }

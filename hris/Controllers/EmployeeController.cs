@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using hris.Logic;
 using hris.Models;
+using shraredclasses.Models;
 
 namespace hris.Controllers;
 
@@ -18,22 +19,40 @@ public class EmployeeController : ControllerBase
         _hrIsService = hrIsService;
     }
 
-  
-    [HttpPut]
-    [Route("/Employee/Vacant")]
-    public async Task<IActionResult> SetPositionVacant(string positionID)
-    {
-        await _hrIsService.SetPositionVacant(positionID);
-        return Ok();
-    }
-
 
     [HttpPost]
-    [Route("/Employee")]
-    public async Task<IActionResult> CreateEmployee(Employee employee)
+    [Route("/Employee/Vacant")]
+    public async Task<IActionResult> CreateVacantPositionID()
     {
-        await _hrIsService.CreateEmployee(employee);
+        var result = await _hrIsService.CreateVacantPositionRequest();
+        return Ok(new WsResponse() { Data = result});
+    }
+
+
+    [HttpPut]
+    [Route("/Employee/Vacant")]
+    public async Task<IActionResult> SetPositionIDVacant(string createVacantPositionRequestId, string positionID)
+    {
+        await _hrIsService.SetPositionVacant(createVacantPositionRequestId, positionID);
         return Ok();
     }
+
+
+    [HttpGet]
+    [Route("/Employee/Vacancy/{positionID}")]
+    public async Task<IActionResult> GetVacancyID(string positionID)
+    {
+        var response = await _hrIsService.GetVacancyID(positionID);
+        return Ok(new WsResponse() { Data = response});
+    }
+
+
+    //[HttpPost]
+    //[Route("/Employee")]
+    //public async Task<IActionResult> CreateEmployee(Employee employee)
+    //{
+    //    await _hrIsService.CreateEmployee(employee);
+    //    return Ok();
+    //}
 }
 
