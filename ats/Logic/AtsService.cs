@@ -60,36 +60,6 @@ namespace ats.Logic
 			await endPoint.Send(new CreateNotification() { PositionName = "Lead Developer", Email = data.Email, NotificationType = NotificationType.Interview });
 			return true;
         }
-        #region
-        //     public async Task<bool> ChooseApplicant(string vacancyID, string vacancyResponseID)
-        //     {
-        //var data = _dataBaseService.FindVacancyResponse(vacancyResponseID);
-        //Uri uri = new Uri("rabbitmq://localhost/createuser");
-        //var endPoint = await _bus.GetSendEndpoint(uri);
-        //var guid = Guid.NewGuid().ToString();
-
-        //var createUserRequest = new CreateUser() { CorrelationID = guid, Email = data.Email, FirstName = data.FirstName, LastName = data.LastName, VacancyId = vacancyID };
-        //var result = _dataBaseService.Create(createUserRequest);
-
-        //         await endPoint.Send(createUserRequest);
-        //return true;
-        //     }
-
-        //public async Task<bool> CreateApplicant(CreateUserResponse createUserResponse)
-        //{
-        //	var applicant = new Applicant(createUserResponse);
-        //	var result = _dataBaseService.Create(applicant);
-
-        //	var deleteresult = _dataBaseService.DeleteCreateUser(createUserResponse.CorrelationID);
-
-        //          Uri uri = new Uri("rabbitmq://localhost/notification");
-        //          var endPoint = await _bus.GetSendEndpoint(uri);
-        //          await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = applicant.Email, NotificationType = NotificationType.Register });
-        //          return true;
-
-        //      }
-        #endregion
-
 
         public async Task<Applicant> CreateApplicantID()
         {
@@ -112,7 +82,7 @@ namespace ats.Logic
             var vacancyResponse = _dataBaseService.FindVacancyResponse(createApplicantDTO.VacancyResponseID);
             var updateresult = _dataBaseService.AddEmailToApplicant(applicantId, vacancyResponse);
             updateresult = _dataBaseService.AddVacancyIdToApplicant(applicantId, createApplicantDTO.VacancyID);
-
+            updateresult = _dataBaseService.AddPersonalDataToApplicant(applicantId, vacancyResponse);
             Uri uri = new Uri("rabbitmq://localhost/createuser");
             var endPoint = await _bus.GetSendEndpoint(uri);
             var guid = Guid.NewGuid().ToString();
@@ -122,17 +92,7 @@ namespace ats.Logic
 
             await endPoint.Send(createUserRequest);
             return true;
-            #region
-            //var applicant = new Applicant();
-            //var result = _dataBaseService.Create(applicant);
-            //return result;
-            //var deleteresult = _dataBaseService.DeleteCreateUser(createUserResponse.CorrelationID);
-
-            //Uri uri = new Uri("rabbitmq://localhost/notification");
-            //var endPoint = await _bus.GetSendEndpoint(uri);
-            //await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = applicant.Email, NotificationType = NotificationType.Register });
-            //return true;
-            #endregion
+    
         }
 
 
@@ -145,38 +105,25 @@ namespace ats.Logic
             var endPoint = await _bus.GetSendEndpoint(uri);
             await endPoint.Send(new CreateNotification() { UserID = createUserResponse.UserID, PositionName = "Lead Developer", Email = createUserResponse.Email, NotificationType = NotificationType.Register });
             return true;
-
-            #region
-            //var vacancyResponse = _dataBaseService.FindVacancyResponse(createApplicantDTO.VacancyResponseID);
-            //var updateresult = _dataBaseService.AddEmailToApplicant(applicantId, vacancyResponse);
-            //updateresult = _dataBaseService.AddVacancyIdToApplicant(applicantId, createApplicantDTO.VacancyID);
-
-            //Uri uri = new Uri("rabbitmq://localhost/createuser");
-            //var endPoint = await _bus.GetSendEndpoint(uri);
-            //var guid = Guid.NewGuid().ToString();
-
-            //var createUserRequest = new CreateUser() { CorrelationID = guid, Email = vacancyResponse.Email, FirstName = vacancyResponse.FirstName, LastName = vacancyResponse.LastName, VacancyId = createApplicantDTO.VacancyID };
-            //var result = _dataBaseService.Create(createUserRequest);
-
-            //await endPoint.Send(createUserRequest);
-            //return true;
-            
-            //var applicant = new Applicant();
-            //var result = _dataBaseService.Create(applicant);
-            //return result;
-            //var deleteresult = _dataBaseService.DeleteCreateUser(createUserResponse.CorrelationID);
-
-            //Uri uri = new Uri("rabbitmq://localhost/notification");
-            //var endPoint = await _bus.GetSendEndpoint(uri);
-            //await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = applicant.Email, NotificationType = NotificationType.Register });
-            //return true;
-            #endregion
         }
 
         public async Task<bool> SetUpQuestionnare(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnare )
         {
 			var result = _dataBaseService.AddApplicantQuestionnare(applicantId, setUpApplicantQuestionnare);
 			return true;
+        }
+
+
+        public async Task<Applicant> GetApplicant (string applicantId)
+        {
+            var result = _dataBaseService.FindApplicant(applicantId);
+            return result;
+        }
+
+        public async Task<JobOffer> CreateOffer(string applicantId, CreateJobOfferDTO createJobOfferDTO)
+        {
+            var result = _dataBaseService.UpdateOffer(applicantId, createJobOfferDTO);
+            return result;
         }
     }
 }

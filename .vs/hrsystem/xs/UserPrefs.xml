@@ -1,50 +1,41 @@
-﻿<Properties StartupConfiguration="{33BAB300-F8F9-405A-8DC1-275F7DE29060}|http">
+﻿<Properties StartupConfiguration="Debug">
   <MonoDevelop.Ide.ItemProperties.hris PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.ats PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ats/Controllers/ApplicantController.cs">
     <Files>
-      <File FileName="hris/Models/Employee.cs" Line="18" Column="1" />
-      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" Line="23" Column="10" />
-      <File FileName="ats/Logic/AtsService.cs" Line="136" Column="1" />
-      <File FileName="ats/Controllers/ApplicantController.cs" Line="92" Column="1" />
-      <File FileName="shraredclasses/DTOs/CreateApplicantDTO.cs" Line="4" Column="15" />
-      <File FileName="ats/MassTransit/CreateUserResponseConsumer.cs" Line="28" Column="1" />
-      <File FileName="ats/DB/DataBaseService.cs" Line="91" Column="10" />
+      <File FileName="hris/Models/Employee.cs" />
+      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" />
+      <File FileName="ats/Logic/AtsService.cs" />
+      <File FileName="ats/Controllers/ApplicantController.cs" Line="57" Column="8" />
+      <File FileName="shraredclasses/DTOs/CreateApplicantDTO.cs" />
+      <File FileName="ats/MassTransit/CreateUserResponseConsumer.cs" />
+      <File FileName="ats/DB/DataBaseService.cs" />
+      <File FileName="hris/Properties/launchSettings.json" Line="12" Column="1" />
+      <File FileName="ats/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="hris/Controllers/EmployeeController.cs" Line="36" Column="34" />
+      <File FileName="hris/Logic/HrIsService.cs" Line="60" Column="37" />
+      <File FileName="notification/Properties/launchSettings.json" Line="19" Column="21" />
+      <File FileName="hris/DB/CreateVacantPositionRequestContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="hrsystem" expanded="True">
             <Node name="ats" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="DB" expanded="True" />
-              <Node name="Env" expanded="True" />
-              <Node name="Logic" expanded="True" />
-              <Node name="MassTransit" expanded="True" />
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="auth" expanded="True">
-              <Node name="auth" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Env" expanded="True" />
-              <Node name="MassTransit" expanded="True" />
-            </Node>
-            <Node name="hris" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ApplicantController.cs" selected="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="DB" expanded="True" />
-              <Node name="Env" expanded="True" />
-              <Node name="Logic" expanded="True" />
-              <Node name="MassTransit" expanded="True" />
-              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
-            <Node name="shraredclasses" expanded="True">
-              <Node name="Commands" expanded="True" />
-              <Node name="DTOs" expanded="True" />
+            <Node name="hris" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="DB" expanded="True" />
+              <Node name="Logic" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="notification" expanded="True">
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -55,12 +46,19 @@
     <BreakpointStore>
       <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/notification/MassTransit/CreateNotificationConsumer.cs" relfile="notification/MassTransit/CreateNotificationConsumer.cs" line="22" column="1" />
       <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/notification/Logic/NotificationService.cs" relfile="notification/Logic/NotificationService.cs" line="11" column="1" />
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/hris/Logic/HrIsService.cs" relfile="hris/Logic/HrIsService.cs" line="28" column="1" />
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/ats/Controllers/ApplicantController.cs" relfile="ats/Controllers/ApplicantController.cs" line="89" column="1" />
       <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/ats/Logic/AtsService.cs" relfile="ats/Logic/AtsService.cs" line="112" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Debug" Name="Debug">
+      <Items>
+        <StartupItem ItemId="{33BAB300-F8F9-405A-8DC1-275F7DE29060}" ItemName="ats" ConfigurationId="http" />
+        <StartupItem ItemId="{335CAE1E-A01F-41FA-9221-C672D73458F2}" ItemName="auth" ConfigurationId="http" />
+        <StartupItem ItemId="{C984C5E5-4624-4EC9-A1A6-B53C97CB32ED}" ItemName="hris" ConfigurationId="http" />
+        <StartupItem ItemId="{DC6CF28E-6B56-41CD-8BCC-1800F9E3E81E}" ItemName="notification" ConfigurationId="http" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.notification PreferredExecutionTarget="/Applications/Google Chrome.app" />

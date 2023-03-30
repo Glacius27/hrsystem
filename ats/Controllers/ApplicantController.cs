@@ -42,7 +42,7 @@ public class ApplicantController : ControllerBase
 
 
     [HttpPut]
-    [Route("/Vacancy/Response")]
+    [Route("/Vacancy/Response/{vacancyId}")]
     public async Task<IActionResult> SetVacancyResponse(string vacancyId, VacancyResponse vacancyResponse)
     {
         var result = _atsService.RegisterVacancyResponse(vacancyId, vacancyResponse);
@@ -50,30 +50,26 @@ public class ApplicantController : ControllerBase
             return NotFound();
         return Accepted();
     }
-    //[HttpPut]
-    //public async Task<IActionResult> AcceptOffer(string offerId)
-    //{
-    //    return Ok();
-    //}
-    //[HttpPut]
-    //public async Task<IActionResult> RefuseOffer(string offerId)
-    //{
-    //    return Ok();
-    //}
     [HttpPut]
-    [Route("/Vacancy/IntreviewInvite")]
-    public async Task<IActionResult> InviteToInterview(string vacancyId, string vacancyResponseID)
+    public async Task<IActionResult> AcceptOffer(string offerId)
     {
-        var result = _atsService.InviteToInterview(vacancyId, vacancyResponseID);
+        return Ok();
+    }
+    [HttpPut]
+    [Route("/Vacancy/Offer/Reject/{applicantId}")]
+    public async Task<IActionResult> RejectOffer(string applicantId, string offerId)
+    {
+
         return Accepted();
     }
-    //[HttpPut]
-    //[Route("/Vacancy/Applicant")]
-    //public async Task<IActionResult> ChooseApplicant(string vacancyId, string vacancyResponseID)
-    //{
-    //    var result = _atsService.ChooseApplicant(vacancyId, vacancyResponseID);
-    //    return Accepted();
-    //}
+    [HttpPut]
+    [Route("/Vacancy/Offer/Accept/{applicantId}")]
+    public async Task<IActionResult> AcceptOffer(string applicantId, string offerId)
+    {
+        //var result = _atsService.InviteToInterview(vacancyId, vacancyResponseID);
+        return Accepted();
+    }
+
 
     [HttpPost]
     [Route("/Vacancy/Applicant")]
@@ -84,7 +80,7 @@ public class ApplicantController : ControllerBase
     }
 
     [HttpPut]
-    [Route("/Vacancy/Applicant")]
+    [Route("/Vacancy/Applicant/{applicantId}")]
     public async Task<IActionResult> CreateApplicant(string applicantId, CreateApplicantDTO createApplicantDTO)
     {
         var result = await _atsService.CreateApplicant(applicantId, createApplicantDTO);
@@ -93,11 +89,27 @@ public class ApplicantController : ControllerBase
 
 
     [HttpPut]
-    [Route("/Vacancy/Applicant/Questionnaire")]
+    [Route("/Vacancy/Applicant/Questionnaire/{applicantId}")]
     public async Task<IActionResult> SetupQuestionnaire(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnareDTO)
     {
         var result = _atsService.SetUpQuestionnare(applicantId, setUpApplicantQuestionnareDTO);
         return Accepted();
+    }
+
+    [HttpGet]
+    [Route("/Vacancy/Applicant/{applicantId}")]
+    public async Task<IActionResult> GetApplicant(string applicantId)
+    {
+        var result = await _atsService.GetApplicant(applicantId);
+        return Ok(new WsResponse() { Data = result });
+    }
+
+    [HttpPut]
+    [Route("/Vacancy/Applicant/Offer/{applicantId}")]
+    public async Task<IActionResult> CreateOffer(string applicantId, CreateJobOfferDTO createJobOfferDTO)
+    {
+        var result = await _atsService.CreateOffer(applicantId, createJobOfferDTO);
+        return Ok(new WsResponse() { Data = result.JobOfferID });
     }
 }
 

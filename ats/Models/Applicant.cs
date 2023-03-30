@@ -13,6 +13,9 @@ namespace ats.Models
         public string ID { get; set; }
 		public string UserID { get; set; }
 		public string VacancyID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
         public Questoinare Questionare { get; set; }
 		public JobOffer JobOffer { get; set; }
@@ -21,7 +24,7 @@ namespace ats.Models
 		public Applicant()
 		{
 			this.Questionare = new Questoinare();
-			this.JobOffer = new JobOffer();
+			this.JobOffer = new JobOffer() { JobOfferStatus = JobOfferStatus.none };
 			this.ApplicantStatus = ApplicantStatus.Registred;
 		}
         public Applicant(CreateUserResponse createUserResponse)

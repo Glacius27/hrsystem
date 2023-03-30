@@ -35,7 +35,7 @@ namespace hris.Logic
                                 
                 request.PositionID = positionID;
                 request.CorrelationID = correlationID;
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
 
             Uri uri = new Uri("rabbitmq://localhost/createvacancy");
@@ -57,9 +57,9 @@ namespace hris.Logic
         {
             using (CreateVacantPositionRequestContext db = new CreateVacantPositionRequestContext())
             {
-                var request = db.CreateVacantPositionRequests.FirstOrDefault(x => x.CorrelationID == response.CorrelationID);
+                var request = await db.CreateVacantPositionRequests.FirstOrDefaultAsync(x => x.CorrelationID == response.CorrelationID);
                 request.VacancyID = response.VacancyID;
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 

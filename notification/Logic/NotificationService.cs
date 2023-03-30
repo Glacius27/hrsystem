@@ -13,8 +13,8 @@ namespace notification.Logic
 
 			if(createNotification.NotificationType == NotificationType.Interview)
 				text = "Interview invitation";
-            if (createNotification.NotificationType == NotificationType.Register)
-				text = "HR platform register invitation";
+			if (createNotification.NotificationType == NotificationType.Register)
+				text = String.Format("HR platform register invitation. Your UserID {0}", createNotification.UserID);
             if (createNotification.NotificationType == NotificationType.Greetings)
 				text = "We proud to see you in our team";
 
@@ -22,7 +22,6 @@ namespace notification.Logic
 			var letter = new Letter()
 			{
 				Email = createNotification.Email,
-				UserID = createNotification.UserID,
 				Text = text
 			};
 

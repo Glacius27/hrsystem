@@ -30,7 +30,7 @@ public class EmployeeController : ControllerBase
 
 
     [HttpPut]
-    [Route("/Employee/Vacant")]
+    [Route("/Employee/Vacant/{positionID}")]
     public async Task<IActionResult> SetPositionIDVacant(string createVacantPositionRequestId, string positionID)
     {
         await _hrIsService.SetPositionVacant(createVacantPositionRequestId, positionID);

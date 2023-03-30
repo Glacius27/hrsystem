@@ -58,6 +58,9 @@ namespace ats.DB
         public Vacancy Find(string vacancyId) =>
             _vacancies.Find(x => x.VacancyID == vacancyId).SingleOrDefault();
 
+        public Applicant FindApplicant(string applicantId) =>
+            _applicants.Find(x => x.ID == applicantId).SingleOrDefault();
+
 
         public VacancyResponse FindVacancyResponse(string vacancyResponseId) =>
             _vacancyResponses.Find(x => x.VacancyResponseID == vacancyResponseId).SingleOrDefault();
@@ -79,6 +82,30 @@ namespace ats.DB
             var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
             return result;
         }
+
+        public UpdateResult AddPersonalDataToApplicant(string applicantId, VacancyResponse vacancyResponse)
+        {
+            var update = Builders<Applicant>.Update
+                    .Set(x => x.LastName, vacancyResponse.LastName)
+                    .Set(x => x.FirstName, vacancyResponse.FirstName)
+                    .Set(x => x.Phone, vacancyResponse.Phone);
+            var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
+            return result;
+        }
+
+        public JobOffer UpdateOffer(string applicantId, CreateJobOfferDTO createJobOfferDTO)
+        {
+            var update = Builders<Applicant>.Update
+                    .Set(x => x.JobOffer.PositionDescription, createJobOfferDTO.PositionDescription)
+                    .Set(x => x.JobOffer.PositionName, createJobOfferDTO.PositionName)
+                    .Set(x => x.JobOffer.Salary, createJobOfferDTO.Salary)
+                    .Set(x => x.JobOffer.JobOfferStatus, JobOfferStatus.pending)
+                    .Set(x => x.JobOffer.JobOfferID, Guid.NewGuid().ToString());
+            var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
+            var applicant = _applicants.Find(x => x.ID == applicantId).SingleOrDefault();
+            return applicant.JobOffer;
+        }
+
 
         public UpdateResult AddVacancyIdToApplicant(string applicantId, string vacancyId)
         {

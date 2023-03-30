@@ -5,9 +5,10 @@ namespace shraredclasses.Models
     {
         public string Type { get; set; }
         public string City { get; set; }
-        public string Number { get; set; }
-        public string Issuer { get; set; }
-        public string IssueDate { get; set; }
+        public string Street { get; set; }
+        public string House { get; set; }
+        public string Building { get; set; }
+        public string Appartments { get; set; }
     }
 }
 
