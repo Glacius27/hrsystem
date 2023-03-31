@@ -50,23 +50,21 @@ public class ApplicantController : ControllerBase
             return NotFound();
         return Accepted();
     }
-    [HttpPut]
-    public async Task<IActionResult> AcceptOffer(string offerId)
-    {
-        return Ok();
-    }
+
     [HttpPut]
     [Route("/Vacancy/Offer/Reject/{applicantId}")]
     public async Task<IActionResult> RejectOffer(string applicantId, string offerId)
     {
-
+        var status = JobOfferStatus.refused;
+        await _atsService.ChangeOfferState(applicantId, offerId, status);
         return Accepted();
     }
     [HttpPut]
     [Route("/Vacancy/Offer/Accept/{applicantId}")]
     public async Task<IActionResult> AcceptOffer(string applicantId, string offerId)
     {
-        //var result = _atsService.InviteToInterview(vacancyId, vacancyResponseID);
+        var status = JobOfferStatus.accepted;
+        await _atsService.ChangeOfferState(applicantId, offerId, status);
         return Accepted();
     }
 

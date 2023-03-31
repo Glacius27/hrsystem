@@ -12,14 +12,6 @@ namespace ats.Models
 		public string PositionDescription { get; set; }
 		public decimal Salary { get; set; }
 		public JobOfferStatus JobOfferStatus { get; set; }
-
-  //      public JobOffer(CreateJobOfferDTO createJobOfferDTO)
-		//{
-		//	this.PositionName = createJobOfferDTO.PositionName;
-		//	this.PositionDescription = createJobOfferDTO.PositionDescription;
-		//	this.Salary = createJobOfferDTO.Salary;
-		//	this.JobOfferStatus = JobOfferStatus.pending;
-		//}
     }
 
 	 

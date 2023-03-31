@@ -5,28 +5,55 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="ats/Controllers/ApplicantController.cs">
     <Files>
       <File FileName="hris/Models/Employee.cs" />
-      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" />
-      <File FileName="ats/Logic/AtsService.cs" />
-      <File FileName="ats/Controllers/ApplicantController.cs" Line="57" Column="8" />
-      <File FileName="shraredclasses/DTOs/CreateApplicantDTO.cs" />
-      <File FileName="ats/MassTransit/CreateUserResponseConsumer.cs" />
-      <File FileName="ats/DB/DataBaseService.cs" />
+      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" Line="23" Column="10" />
+      <File FileName="ats/Logic/AtsService.cs" Line="124" Column="1" />
+      <File FileName="ats/Controllers/ApplicantController.cs" Line="64" Column="1" />
+      <File FileName="shraredclasses/DTOs/CreateApplicantDTO.cs" Line="4" Column="15" />
+      <File FileName="ats/MassTransit/CreateUserResponseConsumer.cs" Line="28" Column="1" />
+      <File FileName="ats/DB/DataBaseService.cs" Line="109" Column="28" />
       <File FileName="hris/Properties/launchSettings.json" Line="12" Column="1" />
       <File FileName="ats/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="hris/Controllers/EmployeeController.cs" Line="36" Column="34" />
+      <File FileName="hris/Controllers/EmployeeController.cs" Line="33" Column="42" />
       <File FileName="hris/Logic/HrIsService.cs" Line="60" Column="37" />
       <File FileName="notification/Properties/launchSettings.json" Line="19" Column="21" />
       <File FileName="hris/DB/CreateVacantPositionRequestContext.cs" Line="1" Column="1" />
+      <File FileName="ats/Models/VacancyResponse.cs" Line="8" Column="15" />
+      <File FileName="notification/MassTransit/CreateNotificationConsumer.cs" Line="26" Column="1" />
+      <File FileName="notification/Logic/NotificationService.cs" Line="39" Column="1" />
+      <File FileName="notification/Models/Letter.cs" Line="11" Column="36" />
+      <File FileName="shraredclasses/Commands/CreateNotification.cs" Line="9" Column="1" />
+      <File FileName="auth/Controllers/UserController.cs" Line="1" Column="1" />
+      <File FileName="auth/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="auth/Controllers/AuthController.cs" Line="1" Column="1" />
+      <File FileName="shraredclasses/DTOs/SetUpApplicantQuestionnareDTO.cs" Line="10" Column="47" />
+      <File FileName="shraredclasses/Models/Address.cs" Line="11" Column="34" />
+      <File FileName="ats/Models/Applicant.cs" Line="36" Column="53" />
+      <File FileName="ats/Models/JobOffer.cs" Line="14" Column="53" />
+      <File FileName="shraredclasses/DTOs/CreateJobOfferDTO.cs" Line="5" Column="3" />
+      <File FileName="ats/Models/Vacancy.cs" Line="1" Column="1" />
+      <File FileName="shraredclasses/DTOs/CreateEmployeeRequestDTO.cs" Line="1" Column="1" />
+      <File FileName="shraredclasses/DTOs/CreateBankDetailsRequestDTO.cs" Line="1" Column="1" />
+      <File FileName="ats/DB/DataBaseSettings.cs" Line="1" Column="1" />
+      <File FileName="shraredclasses/Models/WsResponse.cs" Line="13" Column="1" />
+      <File FileName="ats/Env/Program.cs" Line="1" Column="1" />
+      <File FileName="ats/Env/Startup.cs" Line="1" Column="1" />
+      <File FileName="auth/DB/DataBaseService.cs" Line="51" Column="67" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="hrsystem" expanded="True">
             <Node name="ats" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="ApplicantController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="DB" expanded="True" />
+              <Node name="Env" expanded="True" />
+              <Node name="Logic" expanded="True" />
+              <Node name="MassTransit" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="auth" expanded="True">
+              <Node name="DB" expanded="True" />
             </Node>
             <Node name="hris" expanded="True">
               <Node name="Controllers" expanded="True" />
@@ -34,8 +61,10 @@
               <Node name="Logic" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
-            <Node name="notification" expanded="True">
-              <Node name="Properties" expanded="True" />
+            <Node name="shraredclasses" expanded="True">
+              <Node name="Commands" expanded="True" />
+              <Node name="DTOs" expanded="True" />
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -43,11 +72,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/notification/MassTransit/CreateNotificationConsumer.cs" relfile="notification/MassTransit/CreateNotificationConsumer.cs" line="22" column="1" />
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/notification/Logic/NotificationService.cs" relfile="notification/Logic/NotificationService.cs" line="11" column="1" />
-      <Breakpoint file="/Users/german/Projects/gitrepos/hrsystem/ats/Logic/AtsService.cs" relfile="ats/Logic/AtsService.cs" line="112" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="Debug" Name="Debug">

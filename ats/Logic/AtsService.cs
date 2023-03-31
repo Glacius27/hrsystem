@@ -67,14 +67,6 @@ namespace ats.Logic
             var result = _dataBaseService.Create(applicant);
             return result;
 
-            #region
-            //var deleteresult = _dataBaseService.DeleteCreateUser(createUserResponse.CorrelationID);
-
-            //Uri uri = new Uri("rabbitmq://localhost/notification");
-            //var endPoint = await _bus.GetSendEndpoint(uri);
-            //await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, PositionName = "Lead Developer", Email = applicant.Email, NotificationType = NotificationType.Register });
-            //return true;
-            #endregion
         }
 
         public async Task<bool> CreateApplicant(string applicantId, CreateApplicantDTO createApplicantDTO)
@@ -124,6 +116,18 @@ namespace ats.Logic
         {
             var result = _dataBaseService.UpdateOffer(applicantId, createJobOfferDTO);
             return result;
+        }
+
+
+        public async Task ChangeOfferState(string applicantId, string jobOfferID, JobOfferStatus jobOfferStatus)
+        {
+            var result = _dataBaseService.ChangeOfferState(applicantId, jobOfferID, jobOfferStatus);
+            if(jobOfferStatus == JobOfferStatus.accepted)
+            {
+
+            }
+            if (jobOfferStatus == JobOfferStatus.refused)
+                return;
         }
     }
 }

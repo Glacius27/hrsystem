@@ -106,6 +106,14 @@ namespace ats.DB
             return applicant.JobOffer;
         }
 
+        public UpdateResult ChangeOfferState(string applicantId, string JobOfferId, JobOfferStatus status)
+        {
+            var update = Builders<Applicant>.Update
+                     .Set(x => x.JobOffer.JobOfferStatus, status);
+            var result = _applicants.UpdateOne(x => x.ID == applicantId, update);
+            return result;
+        }
+
 
         public UpdateResult AddVacancyIdToApplicant(string applicantId, string vacancyId)
         {
