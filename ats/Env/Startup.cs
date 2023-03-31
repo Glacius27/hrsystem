@@ -84,7 +84,7 @@ namespace hris.Env
                 x.AddConsumer<CreateEmployeeResponseConsumer>();
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
-                    cfg.Host(new Uri("rabbitmq://localhost"), h =>
+                    cfg.Host(new Uri("rabbitmq://rabbit-rabbitmq"), h =>
                     {
                         h.Username("guest");
                         h.Password("guest");

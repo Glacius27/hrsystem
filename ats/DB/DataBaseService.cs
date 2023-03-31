@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using ats.Models;
 using shraredclasses.Commands;
 using shraredclasses.DTOs;
+using ats.MassTransit.Saga;
 
 namespace ats.DB
 {
@@ -12,6 +13,8 @@ namespace ats.DB
         private readonly IMongoCollection<VacancyResponse> _vacancyResponses;
         private readonly IMongoCollection<CreateUser> _createUserRequests;
         private readonly IMongoCollection<Applicant> _applicants;
+        private readonly IMongoCollection<OnboardingEmployeeSagaState> _sagas;
+
 
         public DataBaseService(IDataBaseSettings settings)
         {
@@ -19,7 +22,8 @@ namespace ats.DB
             var database = client.GetDatabase(settings.DatabaseName);
             _vacancies = database.GetCollection<Vacancy>("Vacancies");
             _vacancyResponses = database.GetCollection<VacancyResponse>("VacanciesResponses");
-            _createUserRequests = database.GetCollection<CreateUser>("PendingRequests");
+            _createUserRequests = database.GetCollection<CreateUser>("CreateUserRequests");
+            _sagas = database.GetCollection<OnboardingEmployeeSagaState>("Sagas");
             _applicants = database.GetCollection<Applicant>("Applicants");
         }
 
@@ -39,6 +43,20 @@ namespace ats.DB
         {
             _createUserRequests.InsertOne(createUserRequest);
             return createUserRequest;
+        }
+
+        public OnboardingEmployeeSagaState CreateSaga(OnboardingEmployeeSagaState onboardingEmployeeSagaState)
+        {
+            _sagas.InsertOne(onboardingEmployeeSagaState);
+            return onboardingEmployeeSagaState;
+        }
+
+        public UpdateResult UpdateSaga(OnboardingEmployeeSagaState onboardingEmployeeSagaState, string state)
+        {
+            var update = Builders<OnboardingEmployeeSagaState>.Update
+                    .Set(x => x.CurrentState, state);
+            var result = _sagas.UpdateOne(x => x.CorrelationId == onboardingEmployeeSagaState.CorrelationId, update);
+            return result;
         }
 
 

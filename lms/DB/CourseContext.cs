@@ -14,7 +14,7 @@ namespace lms.DB
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=lms;Username=postgres");
+            optionsBuilder.UseNpgsql("Host=postgre-postgres;Port=5432;Database=lms;Username=postgres");
         }
     }
 }

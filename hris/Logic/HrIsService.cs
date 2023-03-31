@@ -35,7 +35,7 @@ namespace hris.Logic
                 await db.SaveChangesAsync();
             }
 
-            Uri uri = new Uri("rabbitmq://localhost/createvacancy");
+            Uri uri = new Uri("rabbitmq://rabbit-rabbitmq/createvacancy");
             var endPoint = await _bus.GetSendEndpoint(uri);
             await endPoint.Send(new CreateVacancy() { PositionID = positionID, City = "Moscow", PositionName = "Lead Developer", CorrelationID = correlationID});
         }
@@ -98,7 +98,7 @@ namespace hris.Logic
                 }
             }
 
-                Uri uri = new Uri("rabbitmq://localhost/createEmployeeResponse");
+                Uri uri = new Uri("rabbitmq://rabbit-rabbitmq/createEmployeeResponse");
                 var endPoint = await _bus.GetSendEndpoint(uri);
                 await endPoint.Send(new CreateEmployeeResponse() {CorrelationID = createEmployeeRequest.CorrelationID, EmployeeID = employee.PositionID, ApplicantID = createEmployeeRequest.ApplicantID } );
         }

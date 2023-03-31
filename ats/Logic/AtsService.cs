@@ -8,6 +8,7 @@ using shraredclasses.Commands;
 using shraredclasses.DTOs;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using shraredclasses.Events;
+using ats.MassTransit.Saga;
 
 namespace ats.Logic
 {
@@ -146,6 +147,17 @@ namespace ats.Logic
 
         public async Task ApplyEmployee(CreateEmployeeResponse createEmployeeResponse)
         {
+     
+                var saga = new OnboardingEmployeeSagaState()
+                {
+                    CorrelationId = Guid.NewGuid(),
+                    Version = 1,
+                    RequestId = Guid.NewGuid(),
+                    CurrentState = "0",
+                    ResponseAddress = new Uri("http://localhost")
+                };
+            
+            _dataBaseService.CreateSaga(saga);
             var applicant = _dataBaseService.FindApplicant(createEmployeeResponse.ApplicantID);
 
             var bankDetails = new CreateBankDetailsRequest()
@@ -155,23 +167,24 @@ namespace ats.Logic
                 BankNumber = applicant.Questionare.BankDetails.BankNumber,
                 EmployeeId = createEmployeeResponse.EmployeeID
             };
-
+            _dataBaseService.UpdateSaga(saga, "2");
             Uri uri = new Uri("rabbitmq://localhost/createBankDetails");
             var endPoint = await _bus.GetSendEndpoint(uri);
             await endPoint.Send(bankDetails);
-
+            _dataBaseService.UpdateSaga(saga, "3");
             var learning = new CreateLearningTrackRequest()
             {
                 EmployeeId = createEmployeeResponse.EmployeeID
             };
-
+            _dataBaseService.UpdateSaga(saga, "2");
             Uri uri1 = new Uri("rabbitmq://localhost/createLearningCourse");
             var endPoint1 = await _bus.GetSendEndpoint(uri1);
             await endPoint1.Send(learning);
-
+            _dataBaseService.UpdateSaga(saga, "3");
             Uri uri2 = new Uri("rabbitmq://localhost/notification");
             var endPoint2 = await _bus.GetSendEndpoint(uri2);
             await endPoint2.Send(new CreateNotification() { UserID = applicant.UserID, Email = applicant.Email, NotificationType = NotificationType.Greetings });
+            _dataBaseService.UpdateSaga(saga, "1");
         }
     }
 }

@@ -15,7 +15,7 @@ namespace salary.DB
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=salary;Username=postgres");
+            optionsBuilder.UseNpgsql("Host=postgre-postgres;Port=5432;Database=salary;Username=postgres");
         }
     }
 }
