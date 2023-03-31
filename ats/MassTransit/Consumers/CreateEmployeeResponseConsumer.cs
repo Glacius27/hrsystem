@@ -19,7 +19,7 @@ namespace ats.MassTransit.Consumers
         public async Task Consume(ConsumeContext<CreateEmployeeResponse> context)
         {
             var createEmployeeResponse = context.Message;
-            await _atsService.ApplyEmployee(createEmployeeResponse);
+            _atsService.ApplyEmployee(createEmployeeResponse);
         }
     }
     

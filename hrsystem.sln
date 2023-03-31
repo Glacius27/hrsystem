@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "notification", "notificatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "salary", "salary\salary.csproj", "{9A0D5114-BE02-465C-A1CB-D89642EB35D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lms", "lms\lms.csproj", "{AAC64789-F3BD-47DD-BEFD-D6EAFBFBBB65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9A0D5114-BE02-465C-A1CB-D89642EB35D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A0D5114-BE02-465C-A1CB-D89642EB35D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A0D5114-BE02-465C-A1CB-D89642EB35D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC64789-F3BD-47DD-BEFD-D6EAFBFBBB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC64789-F3BD-47DD-BEFD-D6EAFBFBBB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC64789-F3BD-47DD-BEFD-D6EAFBFBBB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC64789-F3BD-47DD-BEFD-D6EAFBFBBB65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

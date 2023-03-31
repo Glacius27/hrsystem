@@ -158,7 +158,7 @@ namespace ats.Logic
 
             Uri uri = new Uri("rabbitmq://localhost/createBankDetails");
             var endPoint = await _bus.GetSendEndpoint(uri);
-
+            await endPoint.Send(bankDetails);
 
             var learning = new CreateLearningTrackRequest()
             {
@@ -167,11 +167,11 @@ namespace ats.Logic
 
             Uri uri1 = new Uri("rabbitmq://localhost/createLearningCourse");
             var endPoint1 = await _bus.GetSendEndpoint(uri1);
-
+            await endPoint1.Send(learning);
 
             Uri uri2 = new Uri("rabbitmq://localhost/notification");
             var endPoint2 = await _bus.GetSendEndpoint(uri2);
-            await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, Email = applicant.Email, NotificationType = NotificationType.Greetings });
+            await endPoint2.Send(new CreateNotification() { UserID = applicant.UserID, Email = applicant.Email, NotificationType = NotificationType.Greetings });
         }
     }
 }
