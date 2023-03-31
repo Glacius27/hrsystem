@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace hris.DB
 {
-	public class CreateVacantPositionRequestContext : DbContext
+	public class DataBaseService : DbContext
     {
         public DbSet<CreateVacantPositionRequest> CreateVacantPositionRequests { get; set; } = null!;
+        public DbSet<Employee> Employees { get; set; } = null!;
 
-        public CreateVacantPositionRequestContext()
+        public DataBaseService()
         {
             Database.EnsureCreated();
         }

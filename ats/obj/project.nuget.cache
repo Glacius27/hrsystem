@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rF8lLnIl0b6eZn2+564Csih0J6Ro7QLs1w+n/4gdO1xEbzTuSJWxpEf076D1IYKAt+wW3bueXmGVX8ZiiITUjg==",
+  "dgSpecHash": "P37hjZX15afWJDCEEe/Tjgn3n+LDPgVhK7tPcmqO1mTuPB5UiNN7/S3vZbtzlBZ+UekmaL6Orc6cjliygCaMug==",
   "success": true,
   "projectFilePath": "/Users/german/Projects/gitrepos/hrsystem/ats/ats.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "/Users/german/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/Users/german/.nuget/packages/masstransit/8.0.14/masstransit.8.0.14.nupkg.sha512",
     "/Users/german/.nuget/packages/masstransit.abstractions/8.0.14/masstransit.abstractions.8.0.14.nupkg.sha512",
+    "/Users/german/.nuget/packages/masstransit.mongodb/8.0.14/masstransit.mongodb.8.0.14.nupkg.sha512",
     "/Users/german/.nuget/packages/masstransit.rabbitmq/8.0.14/masstransit.rabbitmq.8.0.14.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.4/microsoft.aspnetcore.authentication.jwtbearer.7.0.4.nupkg.sha512",
     "/Users/german/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
@@ -42,6 +43,7 @@
     "/Users/german/.nuget/packages/mongodb.bson/2.19.1/mongodb.bson.2.19.1.nupkg.sha512",
     "/Users/german/.nuget/packages/mongodb.driver/2.19.0/mongodb.driver.2.19.0.nupkg.sha512",
     "/Users/german/.nuget/packages/mongodb.driver.core/2.19.0/mongodb.driver.core.2.19.0.nupkg.sha512",
+    "/Users/german/.nuget/packages/mongodb.driver.gridfs/2.19.0/mongodb.driver.gridfs.2.19.0.nupkg.sha512",
     "/Users/german/.nuget/packages/mongodb.libmongocrypt/1.7.0/mongodb.libmongocrypt.1.7.0.nupkg.sha512",
     "/Users/german/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/german/.nuget/packages/prometheus-net/8.0.0/prometheus-net.8.0.0.nupkg.sha512",

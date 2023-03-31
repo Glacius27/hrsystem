@@ -19,7 +19,7 @@ namespace ats.DB
             var database = client.GetDatabase(settings.DatabaseName);
             _vacancies = database.GetCollection<Vacancy>("Vacancies");
             _vacancyResponses = database.GetCollection<VacancyResponse>("VacanciesResponses");
-            _createUserRequests = database.GetCollection<CreateUser>("CreateUserRequests");
+            _createUserRequests = database.GetCollection<CreateUser>("PendingRequests");
             _applicants = database.GetCollection<Applicant>("Applicants");
         }
 

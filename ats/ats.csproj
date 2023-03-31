@@ -19,6 +19,7 @@
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.14" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+    <PackageReference Include="MassTransit.MongoDb" Version="8.0.14" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +37,9 @@
     <None Remove="MassTransit.RabbitMQ" />
     <None Remove="System.IdentityModel.Tokens.Jwt" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="MassTransit\Saga\" />
+    <None Remove="MassTransit.MongoDb" />
+    <None Remove="MassTransit\Consumers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logic\" />
@@ -43,6 +47,8 @@
     <Folder Include="Models\" />
     <Folder Include="DB\" />
     <Folder Include="MassTransit\" />
+    <Folder Include="MassTransit\Saga\" />
+    <Folder Include="MassTransit\Consumers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\shraredclasses\shraredclasses.csproj">

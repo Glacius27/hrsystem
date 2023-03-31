@@ -15,7 +15,7 @@ namespace notification.DB
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=notifications;Username=postgres");
-            //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=employeedb;Username=postgres;Password=пароль_от_postgres");
+            
         }
     }
 }

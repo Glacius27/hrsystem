@@ -15,6 +15,8 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using shraredclasses.Auth;
+using ats.MassTransit.Saga;
+using ats.MassTransit.Consumers;
 
 namespace hris.Env
 {
@@ -67,8 +69,19 @@ namespace hris.Env
 
             services.AddMassTransit(x =>
             {
+                x.SetKebabCaseEndpointNameFormatter();
+                x.AddDelayedMessageScheduler();
+                x.AddSagaStateMachine<OnboardingEmployeeSaga, OnboardingEmployeeSagaState>()
+                    .MongoDbRepository(r =>
+                    {
+                        r.Connection = "mongodb://127.0.0.1";
+                        r.DatabaseName = "ats";
+                        r.CollectionName = "PendingRequests";
+                    });
+
                 x.AddConsumer<CreateVacancyConsumer>();
                 x.AddConsumer<CreateUserResponseConsumer>();
+                x.AddConsumer<CreateEmployeeResponseConsumer>();
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
                     cfg.Host(new Uri("rabbitmq://localhost"), h =>
@@ -87,6 +100,12 @@ namespace hris.Env
                         ep.PrefetchCount = 16;
                         ep.UseMessageRetry(r => r.Interval(2, 100));
                         ep.ConfigureConsumer<CreateUserResponseConsumer>(provider);
+                    });
+                    cfg.ReceiveEndpoint("createEmployeeResponse", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(2, 100));
+                        ep.ConfigureConsumer<CreateEmployeeResponseConsumer>(provider);
                     });
                 }));
             });

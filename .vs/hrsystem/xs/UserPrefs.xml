@@ -1,43 +1,57 @@
-﻿<Properties StartupConfiguration="Debug">
-  <MonoDevelop.Ide.ItemProperties.hris PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
+﻿<Properties StartupConfiguration="{9A0D5114-BE02-465C-A1CB-D89642EB35D5}|http">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.salary FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.ats PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ats/Controllers/ApplicantController.cs">
+  <MonoDevelop.Ide.ItemProperties.auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ats/MassTransit/Saga/OnboardingEmployeeSaga.cs">
     <Files>
       <File FileName="hris/Models/Employee.cs" />
-      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" Line="23" Column="10" />
-      <File FileName="ats/Logic/AtsService.cs" Line="124" Column="1" />
-      <File FileName="ats/Controllers/ApplicantController.cs" Line="64" Column="1" />
-      <File FileName="shraredclasses/DTOs/CreateApplicantDTO.cs" Line="4" Column="15" />
+      <File FileName="ats/MassTransit/CreateVacancyConsumer.cs" />
+      <File FileName="ats/Logic/AtsService.cs" Line="125" Column="58" />
+      <File FileName="ats/Controllers/ApplicantController.cs" Line="27" Column="3" />
+      <File FileName="shraredclasses/DTOs/CreateApplicantDTO.cs" Line="4" Column="19" />
       <File FileName="ats/MassTransit/CreateUserResponseConsumer.cs" Line="28" Column="1" />
       <File FileName="ats/DB/DataBaseService.cs" Line="109" Column="28" />
-      <File FileName="hris/Properties/launchSettings.json" Line="12" Column="1" />
-      <File FileName="ats/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="hris/Controllers/EmployeeController.cs" Line="33" Column="42" />
-      <File FileName="hris/Logic/HrIsService.cs" Line="60" Column="37" />
-      <File FileName="notification/Properties/launchSettings.json" Line="19" Column="21" />
-      <File FileName="hris/DB/CreateVacantPositionRequestContext.cs" Line="1" Column="1" />
-      <File FileName="ats/Models/VacancyResponse.cs" Line="8" Column="15" />
-      <File FileName="notification/MassTransit/CreateNotificationConsumer.cs" Line="26" Column="1" />
-      <File FileName="notification/Logic/NotificationService.cs" Line="39" Column="1" />
-      <File FileName="notification/Models/Letter.cs" Line="11" Column="36" />
-      <File FileName="shraredclasses/Commands/CreateNotification.cs" Line="9" Column="1" />
-      <File FileName="auth/Controllers/UserController.cs" Line="1" Column="1" />
-      <File FileName="auth/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="auth/Controllers/AuthController.cs" Line="1" Column="1" />
-      <File FileName="shraredclasses/DTOs/SetUpApplicantQuestionnareDTO.cs" Line="10" Column="47" />
-      <File FileName="shraredclasses/Models/Address.cs" Line="11" Column="34" />
-      <File FileName="ats/Models/Applicant.cs" Line="36" Column="53" />
-      <File FileName="ats/Models/JobOffer.cs" Line="14" Column="53" />
+      <File FileName="hris/Properties/launchSettings.json" />
+      <File FileName="ats/Properties/launchSettings.json" />
+      <File FileName="hris/Controllers/EmployeeController.cs" Line="46" Column="32" />
+      <File FileName="hris/Logic/HrIsService.cs" />
+      <File FileName="notification/Properties/launchSettings.json" />
+      <File FileName="hris/DB/CreateVacantPositionRequestContext.cs" />
+      <File FileName="ats/Models/VacancyResponse.cs" />
+      <File FileName="notification/MassTransit/CreateNotificationConsumer.cs" />
+      <File FileName="notification/Logic/NotificationService.cs" />
+      <File FileName="notification/Models/Letter.cs" />
+      <File FileName="shraredclasses/Commands/CreateNotification.cs" />
+      <File FileName="auth/Controllers/UserController.cs" Line="111" Column="14" />
+      <File FileName="auth/Properties/launchSettings.json" />
+      <File FileName="auth/Controllers/AuthController.cs" Line="39" Column="44" />
+      <File FileName="shraredclasses/DTOs/SetUpApplicantQuestionnareDTO.cs" />
+      <File FileName="shraredclasses/Models/Address.cs" />
+      <File FileName="ats/Models/Applicant.cs" />
+      <File FileName="ats/Models/JobOffer.cs" />
       <File FileName="shraredclasses/DTOs/CreateJobOfferDTO.cs" Line="5" Column="3" />
-      <File FileName="ats/Models/Vacancy.cs" Line="1" Column="1" />
-      <File FileName="shraredclasses/DTOs/CreateEmployeeRequestDTO.cs" Line="1" Column="1" />
-      <File FileName="shraredclasses/DTOs/CreateBankDetailsRequestDTO.cs" Line="1" Column="1" />
-      <File FileName="ats/DB/DataBaseSettings.cs" Line="1" Column="1" />
-      <File FileName="shraredclasses/Models/WsResponse.cs" Line="13" Column="1" />
+      <File FileName="ats/Models/Vacancy.cs" />
+      <File FileName="shraredclasses/DTOs/CreateEmployeeRequestDTO.cs" />
+      <File FileName="shraredclasses/DTOs/CreateBankDetailsRequestDTO.cs" />
+      <File FileName="ats/DB/DataBaseSettings.cs" />
+      <File FileName="shraredclasses/Models/WsResponse.cs" />
       <File FileName="ats/Env/Program.cs" Line="1" Column="1" />
-      <File FileName="ats/Env/Startup.cs" Line="1" Column="1" />
-      <File FileName="auth/DB/DataBaseService.cs" Line="51" Column="67" />
+      <File FileName="ats/Env/Startup.cs" Line="109" Column="24" />
+      <File FileName="auth/DB/DataBaseService.cs" />
+      <File FileName="auth/Models/User.cs" Line="24" Column="27" />
+      <File FileName="shraredclasses/Commands/CreateUser.cs" Line="18" Column="46" />
+      <File FileName="auth/Env/Program.cs" Line="1" Column="1" />
+      <File FileName="auth/Env/Startup.cs" Line="73" Column="26" />
+      <File FileName="auth/auth/AuthOptions.cs" Line="3" Column="1" />
+      <File FileName="ats/auth/AuthOptions.cs" Line="1" Column="1" />
+      <File FileName="shraredclasses/Auth/AuthOptions.cs" Line="3" Column="23" />
+      <File FileName="hris/Env/Startup.cs" Line="83" Column="23" />
+      <File FileName="ats/MassTransit/Saga/OnboardingEmployeeSagaState.cs" Line="15" Column="1" />
+      <File FileName="ats/MassTransit/Saga/OnboardingEmployeeSaga.cs" Line="16" Column="95" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -45,35 +59,30 @@
           <Node name="hrsystem" expanded="True">
             <Node name="ats" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="DB" expanded="True" />
               <Node name="Env" expanded="True" />
               <Node name="Logic" expanded="True" />
-              <Node name="MassTransit" expanded="True" />
+              <Node name="MassTransit" expanded="True">
+                <Node name="Saga" expanded="True">
+                  <Node name="OnboardingEmployeeSaga.cs" selected="True" />
+                </Node>
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
-            </Node>
-            <Node name="auth" expanded="True">
-              <Node name="DB" expanded="True" />
             </Node>
             <Node name="hris" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="DB" expanded="True" />
-              <Node name="Logic" expanded="True" />
-              <Node name="Properties" expanded="True" />
+              <Node name="Env" expanded="True" />
             </Node>
             <Node name="shraredclasses" expanded="True">
-              <Node name="Commands" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Auth" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.hris PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="Debug" Name="Debug">
       <Items>
@@ -84,7 +93,5 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.notification PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

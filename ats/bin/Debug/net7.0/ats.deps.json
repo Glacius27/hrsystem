@@ -9,6 +9,7 @@
       "ats/1.0.0": {
         "dependencies": {
           "MassTransit": "8.0.14",
+          "MassTransit.MongoDb": "8.0.14",
           "MassTransit.RabbitMQ": "8.0.14",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.4",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
@@ -79,6 +80,19 @@
       "MassTransit.Abstractions/8.0.14": {
         "runtime": {
           "lib/net6.0/MassTransit.Abstractions.dll": {
+            "assemblyVersion": "8.0.14.0",
+            "fileVersion": "8.0.14.0"
+          }
+        }
+      },
+      "MassTransit.MongoDb/8.0.14": {
+        "dependencies": {
+          "MassTransit": "8.0.14",
+          "MongoDB.Driver": "2.19.0",
+          "MongoDB.Driver.GridFS": "2.19.0"
+        },
+        "runtime": {
+          "lib/net6.0/MassTransit.MongoDbIntegration.dll": {
             "assemblyVersion": "8.0.14.0",
             "fileVersion": "8.0.14.0"
           }
@@ -315,6 +329,19 @@
         },
         "runtime": {
           "lib/netstandard2.1/MongoDB.Driver.Core.dll": {
+            "assemblyVersion": "2.19.0.0",
+            "fileVersion": "2.19.0.0"
+          }
+        }
+      },
+      "MongoDB.Driver.GridFS/2.19.0": {
+        "dependencies": {
+          "MongoDB.Bson": "2.19.1",
+          "MongoDB.Driver": "2.19.0",
+          "MongoDB.Driver.Core": "2.19.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Driver.GridFS.dll": {
             "assemblyVersion": "2.19.0.0",
             "fileVersion": "2.19.0.0"
           }
@@ -571,6 +598,13 @@
       "path": "masstransit.abstractions/8.0.14",
       "hashPath": "masstransit.abstractions.8.0.14.nupkg.sha512"
     },
+    "MassTransit.MongoDb/8.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z9fiMox02h8zktcyBftKygd9PEBXX/w2qvml6euKJ/fIHDeW+I5GsHoHFT/ex84cF7rzlQ4uXhbOM6QTAWJtvQ==",
+      "path": "masstransit.mongodb/8.0.14",
+      "hashPath": "masstransit.mongodb.8.0.14.nupkg.sha512"
+    },
     "MassTransit.RabbitMQ/8.0.14": {
       "type": "package",
       "serviceable": true,
@@ -801,6 +835,13 @@
       "sha512": "sha512-KbzJJJc4EsUZ+YQoe7zZL1OxHVC9RjgQMso2LjhZWnlP+IHSON63vKNt7jGarXrOVXK0DqIUrRwQyXMgmqTX5g==",
       "path": "mongodb.driver.core/2.19.0",
       "hashPath": "mongodb.driver.core.2.19.0.nupkg.sha512"
+    },
+    "MongoDB.Driver.GridFS/2.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-neAIAO+QkawjdOKkewZti9eCAyOe5/WJH4kqAGzWBENDCYSq7r5Q881YO7zToBreHaCxsM4UCG5fSp25oqBlYA==",
+      "path": "mongodb.driver.gridfs/2.19.0",
+      "hashPath": "mongodb.driver.gridfs.2.19.0.nupkg.sha512"
     },
     "MongoDB.Libmongocrypt/1.7.0": {
       "type": "package",

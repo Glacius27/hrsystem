@@ -61,7 +61,7 @@ public class ApplicantController : ControllerBase
         return Accepted();
     }
     [HttpPut]
-    [Authorize(Roles = "Applicant")]
+    //[Authorize(Roles = "Applicant")]
     [Route("/Vacancy/Offer/Accept/{applicantId}")]
     public async Task<IActionResult> AcceptOffer(string applicantId, string offerId)
     {

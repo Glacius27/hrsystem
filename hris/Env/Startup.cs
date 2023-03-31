@@ -37,6 +37,7 @@ namespace hris.Env
             services.AddSingleton<HrIsService>();
             services.AddSingleton<CreateVacancy>();
             services.AddSingleton<CreateVacancyResponseConsumer>();
+            services.AddSingleton<CreateEmployeeConsumer>();
 
             services.AddSwaggerGen(option =>
             {
@@ -85,6 +86,7 @@ namespace hris.Env
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<CreateVacancyResponseConsumer>();
+                x.AddConsumer<CreateEmployeeConsumer>();
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
                     cfg.Host(new Uri("rabbitmq://localhost"), h =>
@@ -98,7 +100,12 @@ namespace hris.Env
                         ep.UseMessageRetry(r => r.Interval(2, 100));
                         ep.ConfigureConsumer<CreateVacancyResponseConsumer>(provider);
                     });
-                    
+                    cfg.ReceiveEndpoint("createEmployee", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(2, 100));
+                        ep.ConfigureConsumer<CreateEmployeeConsumer>(provider);
+                    });
                 }));
             });
 

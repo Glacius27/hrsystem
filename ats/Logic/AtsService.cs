@@ -7,6 +7,7 @@ using MassTransit;
 using shraredclasses.Commands;
 using shraredclasses.DTOs;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using shraredclasses.Events;
 
 namespace ats.Logic
 {
@@ -124,10 +125,53 @@ namespace ats.Logic
             var result = _dataBaseService.ChangeOfferState(applicantId, jobOfferID, jobOfferStatus);
             if(jobOfferStatus == JobOfferStatus.accepted)
             {
+                var applicant = _dataBaseService.FindApplicant(applicantId);
+                Uri uri = new Uri("rabbitmq://localhost/createEmployee");
+                var endPoint = await _bus.GetSendEndpoint(uri);
+                var i = new CreateEmployeeRequest()
+                {
+                    ApplicantID = applicant.ID,
+                    CorrelationID = Guid.NewGuid().ToString(),
+                    FirstName = applicant.FirstName,
+                    LastName = applicant.LastName,
+                    VacancyID = applicant.VacancyID
+                };
 
+
+                await endPoint.Send(i);
             }
             if (jobOfferStatus == JobOfferStatus.refused)
                 return;
+        }
+
+        public async Task ApplyEmployee(CreateEmployeeResponse createEmployeeResponse)
+        {
+            var applicant = _dataBaseService.FindApplicant(createEmployeeResponse.ApplicantID);
+
+            var bankDetails = new CreateBankDetailsRequest()
+            {
+                BankAccount = applicant.Questionare.BankDetails.BankAccount,
+                BankName = applicant.Questionare.BankDetails.BankName,
+                BankNumber = applicant.Questionare.BankDetails.BankNumber,
+                EmployeeId = createEmployeeResponse.EmployeeID
+            };
+
+            Uri uri = new Uri("rabbitmq://localhost/createBankDetails");
+            var endPoint = await _bus.GetSendEndpoint(uri);
+
+
+            var learning = new CreateLearningTrackRequest()
+            {
+                EmployeeId = createEmployeeResponse.EmployeeID
+            };
+
+            Uri uri1 = new Uri("rabbitmq://localhost/createLearningCourse");
+            var endPoint1 = await _bus.GetSendEndpoint(uri1);
+
+
+            Uri uri2 = new Uri("rabbitmq://localhost/notification");
+            var endPoint2 = await _bus.GetSendEndpoint(uri2);
+            await endPoint.Send(new CreateNotification() { UserID = applicant.UserID, Email = applicant.Email, NotificationType = NotificationType.Greetings });
         }
     }
 }

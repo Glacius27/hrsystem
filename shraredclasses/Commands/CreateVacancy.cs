@@ -10,5 +10,11 @@ namespace shraredclasses.Commands
         public string PositionName { get; set; }
 		public string CorrelationID { get; set; }
     }
+
+    public class CreateVacancyResponse
+    {
+        public string CorrelationID { get; set; }
+        public string VacancyID { get; set; }
+    }
 }
 

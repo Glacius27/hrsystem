@@ -86,6 +86,24 @@
           }
         }
       },
+      "MassTransit.MongoDb/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit": "8.0.14",
+          "MongoDB.Driver": "2.19.0",
+          "MongoDB.Driver.GridFS": "2.19.0"
+        },
+        "compile": {
+          "lib/net6.0/MassTransit.MongoDbIntegration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MassTransit.MongoDbIntegration.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MassTransit.RabbitMQ/8.0.14": {
         "type": "package",
         "dependencies": {
@@ -621,6 +639,24 @@
         },
         "runtime": {
           "lib/netstandard2.1/MongoDB.Driver.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MongoDB.Driver.GridFS/2.19.0": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.19.0",
+          "MongoDB.Driver": "2.19.0",
+          "MongoDB.Driver.Core": "2.19.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MongoDB.Driver.GridFS.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Driver.GridFS.dll": {
             "related": ".xml"
           }
         }
@@ -1206,6 +1242,27 @@
         "lib/netstandard2.1/MassTransit.Abstractions.xml",
         "masstransit.abstractions.8.0.14.nupkg.sha512",
         "masstransit.abstractions.nuspec",
+        "mt-logo-small.png"
+      ]
+    },
+    "MassTransit.MongoDb/8.0.14": {
+      "sha512": "z9fiMox02h8zktcyBftKygd9PEBXX/w2qvml6euKJ/fIHDeW+I5GsHoHFT/ex84cF7rzlQ4uXhbOM6QTAWJtvQ==",
+      "type": "package",
+      "path": "masstransit.mongodb/8.0.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet.README.md",
+        "lib/net462/MassTransit.MongoDbIntegration.dll",
+        "lib/net462/MassTransit.MongoDbIntegration.xml",
+        "lib/net6.0/MassTransit.MongoDbIntegration.dll",
+        "lib/net6.0/MassTransit.MongoDbIntegration.xml",
+        "lib/netstandard2.0/MassTransit.MongoDbIntegration.dll",
+        "lib/netstandard2.0/MassTransit.MongoDbIntegration.xml",
+        "lib/netstandard2.1/MassTransit.MongoDbIntegration.dll",
+        "lib/netstandard2.1/MassTransit.MongoDbIntegration.xml",
+        "masstransit.mongodb.8.0.14.nupkg.sha512",
+        "masstransit.mongodb.nuspec",
         "mt-logo-small.png"
       ]
     },
@@ -2157,6 +2214,25 @@
         "packageIcon.png"
       ]
     },
+    "MongoDB.Driver.GridFS/2.19.0": {
+      "sha512": "neAIAO+QkawjdOKkewZti9eCAyOe5/WJH4kqAGzWBENDCYSq7r5Q881YO7zToBreHaCxsM4UCG5fSp25oqBlYA==",
+      "type": "package",
+      "path": "mongodb.driver.gridfs/2.19.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net472/MongoDB.Driver.GridFS.dll",
+        "lib/net472/MongoDB.Driver.GridFS.xml",
+        "lib/netstandard2.0/MongoDB.Driver.GridFS.dll",
+        "lib/netstandard2.0/MongoDB.Driver.GridFS.xml",
+        "lib/netstandard2.1/MongoDB.Driver.GridFS.dll",
+        "lib/netstandard2.1/MongoDB.Driver.GridFS.xml",
+        "mongodb.driver.gridfs.2.19.0.nupkg.sha512",
+        "mongodb.driver.gridfs.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "MongoDB.Libmongocrypt/1.7.0": {
       "sha512": "p9+peTZX63nGHskOLhvhfBtrknxNg1RzXepE07rPozuCGz27bMjCcQyvn2YByg0L3YEcNWdTmI4BlnG/5RF+5Q==",
       "type": "package",
@@ -3098,6 +3174,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "MassTransit >= 8.0.14",
+      "MassTransit.MongoDb >= 8.0.14",
       "MassTransit.RabbitMQ >= 8.0.14",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.4",
       "Microsoft.AspNetCore.OpenApi >= 7.0.3",
@@ -3153,6 +3230,10 @@
         "targetAlias": "net7.0",
         "dependencies": {
           "MassTransit": {
+            "target": "Package",
+            "version": "[8.0.14, )"
+          },
+          "MassTransit.MongoDb": {
             "target": "Package",
             "version": "[8.0.14, )"
           },
