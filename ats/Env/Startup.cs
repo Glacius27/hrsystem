@@ -11,6 +11,10 @@ using MassTransit;
 using ats.Logic;
 using ats.MassTransit;
 using ats.DB;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using shraredclasses.Auth;
 
 namespace hris.Env
 {
@@ -88,32 +92,22 @@ namespace hris.Env
             });
 
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options =>
+                    {
+                        options.RequireHttpsMetadata = false;
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidIssuer = AuthOptions.ISSUER,
+                            ValidateAudience = true,
+                            ValidAudience = AuthOptions.AUDIENCE,
+                            ValidateLifetime = true,
+                            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                            ValidateIssuerSigningKey = true,
+                        };
+                    });
 
-            #region
-            //services.AddMassTransit(x =>
-            //{
-            //    //x.UsingRabbitMq();
-            //    //x.AddRequestClient<GeocodeRequest>();
-            //});
-            //services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
-            //services.AddSingleton<IDataBaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
-            //services.AddSingleton<DataBaseService>();
-            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            //        .AddJwtBearer(options =>
-            //        {
-            //            options.RequireHttpsMetadata = false;
-            //            options.TokenValidationParameters = new TokenValidationParameters
-            //            {
-            //                ValidateIssuer = true,
-            //                ValidIssuer = AuthOptions.ISSUER,
-            //                ValidateAudience = true,
-            //                ValidAudience = AuthOptions.AUDIENCE,
-            //                ValidateLifetime = true,
-            //                IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-            //                ValidateIssuerSigningKey = true,
-            //            };
-            //        });
-            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

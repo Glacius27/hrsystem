@@ -1112,8 +1112,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.4",
           "MongoDB.Bson": "2.19.1",
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "System.IdentityModel.Tokens.Jwt": "6.27.0"
         },
         "compile": {
           "bin/placeholder/shraredclasses.dll": {}

@@ -2,6 +2,8 @@
 using hris.Logic;
 using hris.Models;
 using shraredclasses.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace hris.Controllers;
 
@@ -21,6 +23,7 @@ public class EmployeeController : ControllerBase
 
 
     [HttpPost]
+    [Authorize(Roles = "hrbp")]
     [Route("/Employee/Vacant")]
     public async Task<IActionResult> CreateVacantPositionID()
     {
@@ -30,6 +33,7 @@ public class EmployeeController : ControllerBase
 
 
     [HttpPut]
+    [Authorize(Roles = "hrbp")]
     [Route("/Employee/Vacant/{positionID}")]
     public async Task<IActionResult> SetPositionIDVacant(string createVacantPositionRequestId, string positionID)
     {
@@ -39,6 +43,7 @@ public class EmployeeController : ControllerBase
 
 
     [HttpGet]
+    [Authorize(Roles = "hrbp")]
     [Route("/Employee/Vacancy/{positionID}")]
     public async Task<IActionResult> GetVacancyID(string positionID)
     {

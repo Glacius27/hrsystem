@@ -49,3 +49,11 @@
 /Users/german/Projects/gitrepos/hrsystem/hris/obj/Debug/net7.0/hris.pdb
 /Users/german/Projects/gitrepos/hrsystem/hris/obj/Debug/net7.0/hris.genruntimeconfig.cache
 /Users/german/Projects/gitrepos/hrsystem/hris/obj/Debug/net7.0/ref/hris.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/german/Projects/gitrepos/hrsystem/hris/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

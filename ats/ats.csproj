@@ -17,6 +17,8 @@
     <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
     <PackageReference Include="MassTransit" Version="8.0.14" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.14" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +34,8 @@
     <None Remove="MassTransit\" />
     <None Remove="MassTransit" />
     <None Remove="MassTransit.RabbitMQ" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logic\" />

@@ -36,7 +36,9 @@ namespace auth.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email),
-                    new Claim(ClaimsIdentity.DefaultRoleClaimType, "")
+                    new Claim(ClaimTypes.Role, user.Role)
+                    //new Claim(ClaimsIdentity.DefaultRoleClaimType, "")
+                    //new Claim(ClaimsIdentity.DefaultRoleClaimType.Insert(0,""))
                 };
                 _claims = new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
 
@@ -45,6 +47,7 @@ namespace auth.Controllers
                 var jwt = new JwtSecurityToken(
                 issuer: AuthOptions.ISSUER,
                         audience: AuthOptions.AUDIENCE,
+                        //audience: user.Role,
                         notBefore: now,
                         claims: _claims.Claims,
                         expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),

@@ -3,7 +3,9 @@ using ats.Logic;
 using Microsoft.AspNetCore.Mvc;
 using shraredclasses.DTOs;
 using shraredclasses.Models;
-
+using Microsoft.AspNetCore.Authorization;
+using MassTransit.JobService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ats.Controllers;
 
@@ -12,11 +14,6 @@ namespace ats.Controllers;
 public class ApplicantController : ControllerBase
 {
 
-    // в контроллере должны быть методы отлика на вакансию (ее идентификатор)
-    // метод выбора кандидата
-    // метод заполнения анкеты
-    // методы принятия оффера и отказа от него
-    // 
     private readonly ILogger<ApplicantController> _logger;
     private AtsService _atsService;
     public ApplicantController(ILogger<ApplicantController> logger, AtsService atsService)
@@ -25,12 +22,15 @@ public class ApplicantController : ControllerBase
         _atsService = atsService;
     }
 
-   
-    //[HttpPut]
-    //public async Task<IActionResult> SetQuestionare(string vacancyId, SetUpApplicantQuestionareDTO applicantQuestionare)
-    //{
-    //    return Ok();
-    //}
+
+    [HttpPut]
+    [Authorize(Roles = "hrbp")]
+    [Route("/Vacancy/IntreviewInvite/{vacancyId}")]
+    public async Task<IActionResult> InvitetoInterview(string vacancyId, string vacancyResponseID)
+    {
+        var response = _atsService.InviteToInterview(vacancyId, vacancyResponseID);
+        return Ok();
+    }
     [HttpPost]
     [Route("/Vacancy/Response")]
     public async Task<IActionResult> CreateVacancyResponse()
@@ -52,6 +52,7 @@ public class ApplicantController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "Applicant")]
     [Route("/Vacancy/Offer/Reject/{applicantId}")]
     public async Task<IActionResult> RejectOffer(string applicantId, string offerId)
     {
@@ -60,6 +61,7 @@ public class ApplicantController : ControllerBase
         return Accepted();
     }
     [HttpPut]
+    [Authorize(Roles = "Applicant")]
     [Route("/Vacancy/Offer/Accept/{applicantId}")]
     public async Task<IActionResult> AcceptOffer(string applicantId, string offerId)
     {
@@ -70,6 +72,7 @@ public class ApplicantController : ControllerBase
 
 
     [HttpPost]
+    [Authorize(Roles = "hrbp")]
     [Route("/Vacancy/Applicant")]
     public async Task<IActionResult> CreateApplicantID()
     {
@@ -78,6 +81,7 @@ public class ApplicantController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "hrbp")]
     [Route("/Vacancy/Applicant/{applicantId}")]
     public async Task<IActionResult> CreateApplicant(string applicantId, CreateApplicantDTO createApplicantDTO)
     {
@@ -87,14 +91,17 @@ public class ApplicantController : ControllerBase
 
 
     [HttpPut]
+    [Authorize(Roles = "Applicant")]
     [Route("/Vacancy/Applicant/Questionnaire/{applicantId}")]
     public async Task<IActionResult> SetupQuestionnaire(string applicantId, SetUpApplicantQuestionnareDTO setUpApplicantQuestionnareDTO)
     {
+        var _user = HttpContext.User.Identities;
         var result = _atsService.SetUpQuestionnare(applicantId, setUpApplicantQuestionnareDTO);
         return Accepted();
     }
 
     [HttpGet]
+    [Authorize(Roles = "hrbp")]
     [Route("/Vacancy/Applicant/{applicantId}")]
     public async Task<IActionResult> GetApplicant(string applicantId)
     {
@@ -103,6 +110,7 @@ public class ApplicantController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "hrbp")]
     [Route("/Vacancy/Applicant/Offer/{applicantId}")]
     public async Task<IActionResult> CreateOffer(string applicantId, CreateJobOfferDTO createJobOfferDTO)
     {

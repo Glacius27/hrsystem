@@ -14,6 +14,9 @@ using hris.Logic;
 using MassTransit;
 using shraredclasses.Commands;
 using hris.MassTransit;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using shraredclasses.Auth;
 
 namespace hris.Env
 {
@@ -63,7 +66,21 @@ namespace hris.Env
                 });
             });
 
-
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                   .AddJwtBearer(options =>
+                   {
+                       options.RequireHttpsMetadata = false;
+                       options.TokenValidationParameters = new TokenValidationParameters
+                       {
+                           ValidateIssuer = true,
+                           ValidIssuer = AuthOptions.ISSUER,
+                           ValidateAudience = true,
+                           ValidAudience = AuthOptions.AUDIENCE,
+                           ValidateLifetime = true,
+                           IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                           ValidateIssuerSigningKey = true,
+                       };
+                   });
 
             services.AddMassTransit(x =>
             {

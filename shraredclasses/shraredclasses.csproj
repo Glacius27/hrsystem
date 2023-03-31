@@ -12,14 +12,20 @@
     <None Remove="Classes\" />
     <None Remove="Events\" />
     <None Remove="MongoDB.Bson" />
+    <None Remove="Auth\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Models\" />
     <Folder Include="Events\" />
+    <Folder Include="Auth\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="MongoDB.Bson" Version="2.19.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
   </ItemGroup>
 </Project>
